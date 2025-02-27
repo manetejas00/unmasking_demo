@@ -13,11 +13,18 @@ class Service extends Model
         'title',
         'description',
         'image',
-        'features'
+        'features',
+        'page_content'
     ];
 
     protected $casts = [
         'features' => 'array', // Ensures it is always an array
     ];
+
+    public function categories()
+{
+    return $this->belongsToMany(Category::class);
+}
+
 
 }

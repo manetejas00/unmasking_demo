@@ -41,12 +41,14 @@ class OnePageController extends Controller
     public function onePage_seven()
     {
         $banners = Banner::latest()->limit(3)->get(); // Fetch the latest 3 banners
+        $services = Service::latest()->limit(3)->get(); // Fetch the latest 3 services
+
         logger($banners);
-        $services = Service::latest()->limit(3)->get(); // Fetch the latest 3 banners
         logger($services);
 
-        return view('OnePage/onepage_seven', compact('banners'));
+        return view('OnePage/onepage_seven', compact('banners', 'services'));
     }
+
 
 
     public function onePage_eight()

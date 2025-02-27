@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User; // Import User model
+use App\Models\Service;
+
 
 
 class HomeController extends Controller
@@ -50,9 +52,13 @@ class HomeController extends Controller
         return view('index');
     }
 
-    public function service_details()
+    public function service_details(Request $request)
     {
-        return view('service-details');
+        $service = Service::find($request->id);
+        if (!$service) {
+            abort(404, 'Service not found');
+        }
+        return view('service-details', compact('service'));
     }
 
     public function service()

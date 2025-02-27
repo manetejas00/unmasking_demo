@@ -5,6 +5,9 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Category;
+use App\Models\Service;
+use App\Models\Banner;
 
 class DatabaseSeeder extends Seeder
 {
@@ -17,9 +20,10 @@ class DatabaseSeeder extends Seeder
 
         User::factory()->create([
             'name' => 'Test User',
-            'email' => 'test@example.com',
+            'email' => 'admin@admin.com',
         ]);
-        $this->call(BannerSeeder::class);
-        $this->call(ServiceSeeder::class);
+        Banner::factory()->count(10)->create();
+        Category::factory()->count(10)->create();
+        Service::factory()->count(20)->create();
     }
 }

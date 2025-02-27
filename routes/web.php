@@ -7,7 +7,7 @@ use App\Http\Controllers\MultipagesController;
 use App\Http\Controllers\OnePageController;
 
 
-Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/', [OnePageController::class, 'onePage_seven'])->name('index');
 Route::get('/about', [HomeController::class, 'about'])->name('about');
 Route::get('/service', [HomeController::class, 'service'])->name('service');
 Route::get('/service-details', [HomeController::class, 'service_details'])->name('service-details');

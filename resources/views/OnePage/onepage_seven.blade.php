@@ -6,104 +6,8 @@
 
 
 @section('content')
-    <!-- tpm-header-area start -->
-    <!-- tpm-header-area start -->
-    <header class="tmp-header-area-start header-one construction-radious">
-        <!-- header mid area start -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="main-header-one-wrapper">
-                        <!-- tmp nav area -->
-                        <div class="tmp-nav-area-one header--sticky">
-                            <div class="logo-md-sm-device">
-                                <a href="#" class="logo">
-                                    <img src="{{ asset('assets/images/logo/logo-01.svg') }}"src="{{ asset('assets/images/logo/logo-01.svg') }}"
-                                        alt="corporate_business-logo">
-                                </a>
-                            </div>
-
-                            <div class="header-nav main-nav-one">
-                                <nav>
-                                    <ul class="parent-nav">
-                                        <li>
-                                            <a class="nav-link" href="#home">
-                                                <span class="rolling-text">HOME</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="nav-link" href="#about">
-                                                <span class="rolling-text">ABOUT</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="nav-link" href="#service">
-                                                <span class="rolling-text">SERVICES</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="nav-link" href="#portfolio">
-                                                <span class="rolling-text">portfolio</span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="nav-link" href="#contact1">
-                                                <span class="rolling-text">CONTACT</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-
-                            <div class="input-area">
-                                <input type="text" placeholder="Search...">
-                                <i class="fa-light fa-magnifying-glass"></i>
-                            </div>
-                            <div class="actions-area">
-                                <!-- <div class="menu-button" id="search">
-                                                <i class="fa-light fa-grid-2"></i>
-                                            </div> -->
-                                <div class="tmp-side-collups-area" id="side-collups">
-                                    <svg width="20" height="16" viewBox="0 0 20 16" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <rect y="14" width="20" height="2" fill="#1F1F25"></rect>
-                                        <rect y="7" width="20" height="2" fill="#1F1F25"></rect>
-                                        <rect width="20" height="2" fill="#1F1F25"></rect>
-                                    </svg>
-                                </div>
-                                <div class="language-picker">
-                                    <div class="js">
-                                        <div class="language-picker js-language-picker"
-                                            data-trigger-class="btn btn--subtle">
-                                            <form action="" class="language-picker__form">
-                                                <label for="language-picker-select">Select your language</label>
-                                                <select name="language-picker-select" id="language-picker-select">
-                                                    <option lang="de" value="deutsch">Deutsch</option>
-                                                    <option lang="en" value="english" selected>English</option>
-                                                    <option lang="fr" value="francais">Français</option>
-                                                    <option lang="it" value="italiano">Italiano</option>
-                                                </select>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- tmp nav area -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- header mid area end -->
-
-    </header>
-    <!-- tpm-header-area end -->
-
-
+    <x-header />
     <x-sidebar />
-
-
     <!-- tpm-header-area end -->
 
     <!-- tmp banner area start -->
@@ -131,8 +35,7 @@
                                                     {{ $banner->description ?? 'Default description about the business.' }}
                                                 </p>
                                                 <div class="button-area-banner-one">
-                                                    <a href="{{ $banner->button_link ?? '#' }}"
-                                                        class="tmp-btn btn-primary">
+                                                    <a href="{{ $banner->button_link ?? '#' }}" class="tmp-btn btn-primary">
                                                         {{ $banner->button_text ?? 'Learn More' }}
                                                     </a>
                                                     <!-- video icon -->
@@ -169,101 +72,39 @@
     </div>
     <!-- tmp banner area end -->
 
-
+    <!-- tmp service area start -->
     <div class="best-service-we-provide tmp-section-gapTop">
         <div class="container">
             <div class="row g-5">
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up"
-                    data-sal-duration="800">
-                    <div class="service-inner financial-service-inner agency-service feature-service">
-                        <div class="icon">
-                            <img src="{{ asset('assets/images/services/agency-6.svg') }}"src="{{ asset('assets/images/services/agency-6.svg') }}"
-                                alt="corporate_Business_Services_agency">
-                        </div>
-                        <div class="content">
-                            <h2 class="title">Business Stratagy</h2>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-                            </p>
-                            <div class="three--dot">
-                                <div class="dot dot-one"></div>
-                                <div class="dot dot-two"></div>
-                                <div class="dot dot-two"></div>
-                            </div>
-                        </div>
-                        <a href="{{ route('service-details') }}" class="over_link"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12" data-sal-delay="250" data-sal="slide-up"
-                    data-sal-duration="800">
-                    <div class="service-inner financial-service-inner agency-service feature-service">
-                        <div class="icon">
-                            <img src="{{ asset('assets/images/services/agency-1.svg') }}"src="{{ asset('assets/images/services/agency-1.svg') }}"
-                                alt="corporate_Business_Services_agency">
+                @foreach($services as $key => $service)
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12"
+                         data-sal-delay="{{ 150 + ($key * 100) }}"
+                         data-sal="slide-up"
+                         data-sal-duration="800">
 
-                        </div>
-                        <div class="content">
-                            <h2 class="title">Custom website design</h2>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-                            </p>
-                            <div class="three--dot">
-                                <div class="dot dot-one"></div>
-                                <div class="dot dot-two"></div>
-                                <div class="dot dot-two"></div>
+                        <div class="service-inner financial-service-inner agency-service feature-service">
+                            <div class="icon">
+                                <img src="{{ Storage::url($service->image) }}" alt="{{ $service->title }}" width="60" height="60">
                             </div>
-                        </div>
-                        <a href="{{ route('service-details') }}" class="over_link"></a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12" data-sal-delay="350" data-sal="slide-up"
-                    data-sal-duration="800">
-                    <div class="service-inner financial-service-inner agency-service feature-service">
-                        <div class="icon">
-                            <img src="{{ asset('assets/images/services/agency-2.svg') }}"src="{{ asset('assets/images/services/agency-2.svg') }}"
-                                alt="corporate_Business_Services_Agency">
-
-                        </div>
-                        <div class="content">
-                            <h2 class="title">Data Analysis</h2>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-                            </p>
-                            <div class="three--dot">
-                                <div class="dot dot-one"></div>
-                                <div class="dot dot-two"></div>
-                                <div class="dot dot-two"></div>
+                            <div class="content">
+                                <h2 class="title">{{ $service->title }}</h2>
+                                <p class="description">
+                                    {{ $service->description }}
+                                </p>
+                                <div class="three--dot">
+                                    <div class="dot dot-one"></div>
+                                    <div class="dot dot-two"></div>
+                                    <div class="dot dot-three"></div>
+                                </div>
                             </div>
+                            <a href="{{ route('service-details', ['id' => $service->id]) }}" class="over_link"></a>
                         </div>
-                        <a href="{{ route('service-details') }}" class="over_link"></a>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-6 col-12" data-sal-delay="450" data-sal="slide-up"
-                    data-sal-duration="800">
-                    <div class="service-inner financial-service-inner agency-service feature-service">
-                        <div class="icon">
-                            <img src="{{ asset('assets/images/services/agency-3.svg') }}"src="{{ asset('assets/images/services/agency-3.svg') }}"
-                                alt="corporate_Business_Services_agency">
-
-                        </div>
-                        <div class="content">
-                            <h2 class="title">Saving &amp; Investments</h2>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-                            </p>
-                            <div class="three--dot">
-                                <div class="dot dot-one"></div>
-                                <div class="dot dot-two"></div>
-                                <div class="dot dot-two"></div>
-                            </div>
-                        </div>
-                        <a href="{{ route('service-details') }}" class="over_link"></a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
-
+    <!-- tmp service area end -->
 
     <!-- Tpm About Area Start  -->
     <div class="about-area tmp-section-gap about-style-one" id="about">
@@ -1030,8 +871,8 @@
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12" data-sal-delay="350" data-sal="slide-up"
                     data-sal-duration="800">
                     <div class="single-team">
-                        <a href="{{ route('team-details') }}" class="thumbnail"
-                            data-tmp-cursor="lg transparent fw-bold" data-tmp-cursor-text="View Details">
+                        <a href="{{ route('team-details') }}" class="thumbnail" data-tmp-cursor="lg transparent fw-bold"
+                            data-tmp-cursor-text="View Details">
                             <img src="{{ asset('assets/images/team/team-1.png') }}"src="{{ asset('assets/images/team/team-1.png') }}"
                                 alt="Corporate team">
                         </a>

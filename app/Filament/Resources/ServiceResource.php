@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Models\Category;
 
 class ServiceResource extends Resource
 {
@@ -33,7 +34,10 @@ class ServiceResource extends Resource
                 Forms\Components\FileUpload::make('image')
                     ->directory('services')
                     ->image(),
-
+                Forms\Components\Select::make('categories')
+                    ->multiple()
+                    ->relationship('categories', 'name')
+                    ->searchable(),
                 Forms\Components\Repeater::make('features')
                     ->schema([
                         Forms\Components\TextInput::make('feature')
@@ -41,6 +45,24 @@ class ServiceResource extends Resource
                     ])
                     ->collapsible()
                     ->columns(1),
+
+                Forms\Components\RichEditor::make('page_content')
+                    ->label('Page Content')
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'strike',
+                        'h2',
+                        'h3',
+                        'bulletList',
+                        'orderedList',
+                        'link',
+                        'blockquote',
+                        'codeBlock',
+                        'table'
+                    ])
+                    ->columnSpanFull()
             ]);
     }
 
@@ -51,9 +73,9 @@ class ServiceResource extends Resource
                 Tables\Columns\TextColumn::make('title')->sortable(),
                 Tables\Columns\TextColumn::make('description')->limit(50),
                 Tables\Columns\ImageColumn::make('image'),
-                Tables\Columns\TextColumn::make('features')
-                ->formatStateUsing(fn($state) => is_array($state) ? implode(', ', $state) : $state),
-
+                Tables\Columns\TextColumn::make('features')->formatStateUsing(fn($state) => is_array($state) ? implode(', ', $state) : $state),
+                Tables\Columns\TextColumn::make('page_content')->label('Page Content')->html()->limit(50),
+                Tables\Columns\TextColumn::make('categories.name')->label('Categories')->badge(),
             ])
             ->filters([])
             ->actions([
