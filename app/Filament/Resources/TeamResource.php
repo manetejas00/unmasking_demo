@@ -11,6 +11,7 @@ use Filament\Tables;
 class TeamResource extends Resource
 {
     protected static ?string $model = Team::class;
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Forms\Form $form): Forms\Form
     {

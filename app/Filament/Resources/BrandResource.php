@@ -14,6 +14,7 @@ use Filament\Tables\Columns\TextColumn;
 class BrandResource extends Resource
 {
     protected static ?string $model = Brand::class;
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
 
     public static function form(Forms\Form $form): Forms\Form

@@ -15,6 +15,7 @@ use Filament\Tables\Columns\TextColumn;
 class TestimonialResource extends Resource
 {
     protected static ?string $model = Testimonial::class;
+    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Forms\Form $form): Forms\Form
     {
