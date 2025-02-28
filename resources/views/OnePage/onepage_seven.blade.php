@@ -255,38 +255,51 @@
     <!-- Tmp Servisec Processs Area Two End -->
 
     <!-- tmp product area start -->
-    <div class="container-full">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="product-swiper-area-one">
-                    <div class="swiper mySwiper-portfolio-2-cons">
-                        <div class="swiper-wrapper">
-                            @foreach ($portfolios as $portfolio)
-                                <div class="swiper-slide">
-                                    <div class="signle-product-start"
-                                        data-tmp-cursor="lg text-secondary transparent fw-bold"
-                                        data-tmp-cursor-icon="fa-solid fa-arrow-up-right">
-                                        <a href="{{ url('pages/projects-details?id=' . $portfolio->id) }}"
-                                            class="thumbnail">
-                                            <img src="{{ Storage::url($portfolio->image) }}"
-                                                alt="{{ $portfolio->title }}">
-                                        </a>
-                                        <div class="inner-content">
-                                            <a href="#">
-                                                <h5 class="title">{{ $portfolio->title }}</h5>
+    <div class="container-full" id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-head">
+                        <div class="section-sub-title center-title">
+                            <img src="{{ asset('assets/images/services/section-custom-menubar.png') }}"
+                                alt="Business_Consulting_services">
+                            <span>OUR PORTFOLIO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="product-swiper-area-one">
+                        <div class="swiper mySwiper-portfolio-2-cons">
+                            <div class="swiper-wrapper">
+                                @foreach ($portfolios as $portfolio)
+                                    <div class="swiper-slide">
+                                        <div class="signle-product-start"
+                                            data-tmp-cursor="lg text-secondary transparent fw-bold"
+                                            data-tmp-cursor-icon="fa-solid fa-arrow-up-right">
+                                            <a href="{{ url('pages/projects-details?id=' . $portfolio->id) }}"
+                                                class="thumbnail">
+                                                <img src="{{ Storage::url($portfolio->image) }}"
+                                                    alt="{{ $portfolio->title }}">
                                             </a>
-                                            <span class="designation">{{ $portfolio->designation }}</span>
-                                            <div class="tag"></div>
+                                            <div class="inner-content">
+                                                <a href="#">
+                                                    <h5 class="title">{{ $portfolio->title }}</h5>
+                                                </a>
+                                                <span class="designation">{{ $portfolio->designation }}</span>
+                                                <div class="tag"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-next" data-tmp-cursor="md transparent fw-bold"
+                                data-tmp-cursor-text="Next"></div>
+                            <div class="swiper-button-prev" data-tmp-cursor="md transparent fw-bold"
+                                data-tmp-cursor-text="Prev"></div>
                         </div>
-                        <div class="swiper-pagination"></div>
-                        <div class="swiper-button-next" data-tmp-cursor="md transparent fw-bold"
-                            data-tmp-cursor-text="Next"></div>
-                        <div class="swiper-button-prev" data-tmp-cursor="md transparent fw-bold"
-                            data-tmp-cursor-text="Prev"></div>
                     </div>
                 </div>
             </div>
