@@ -17,7 +17,7 @@
                 <div class="col-lg-8">
                     <div class="blog-details-left-area border-bottom">
                         <div class="thumbnail-top">
-                            <img src="{{ asset($blog->image ?? 'assets/images/blog/details/01.png') }}"
+                            <img src="{{ Storage::url($blog->image ?? 'assets/images/blog/details/01.png') }}"
                                 alt="{{ $blog->title }}">
                         </div>
                         <div class="blog-details-discription">
