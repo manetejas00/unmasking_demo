@@ -1,15 +1,26 @@
 <?php
 
-namespace App\Models;
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+return new class extends Migration {
+    public function up(): void
+    {
+        Schema::create('work_processes', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->text('description');
+            $table->string('image');
+            $table->integer('step_number');
+            $table->timestamps();
+        });
+    }
 
-class WorkProcess extends Model
-{
-    use HasFactory;
-
-    protected $fillable = ['title', 'description', 'image', 'step_number'];
-}
+    public function down(): void
+    {
+        Schema::dropIfExists('work_processes');
+    }
+};
 
 
