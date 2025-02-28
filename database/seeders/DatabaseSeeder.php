@@ -74,6 +74,9 @@ class DatabaseSeeder extends Seeder
         if (\App\Models\Blog::count() === 0) {
             \App\Models\Blog::factory(6)->create();
         }
+        if (\App\Models\Footer::count() === 0) {
+            \App\Models\Footer::factory()->create();
+        }
 
     }
 }
