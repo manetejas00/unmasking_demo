@@ -18,6 +18,7 @@ Route::get('/blog-details', [HomeController::class, 'blog_details'])->name('blog
 Route::get('/blog-details-2', [HomeController::class, 'blog_details_2'])->name('blog-details-2');
 Route::get('/team-1', [HomeController::class, 'team_1'])->name('team-1');
 Route::get('/team-details', [HomeController::class, 'team_details'])->name('team-details');
+Route::get('team-2','team_2')->name('team-2');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
 
@@ -34,7 +35,6 @@ Route::prefix('pages/')->group(function () {
         Route::get('project','project')->name('project');
         Route::get('projects-details-2','projects_details_2')->name('projects-details-2');
         Route::get('projects-details','projects_details')->name('projects-details');
-        Route::get('team-2','team_2')->name('team-2');
         Route::get('team','team')->name('team');
     });
 });
