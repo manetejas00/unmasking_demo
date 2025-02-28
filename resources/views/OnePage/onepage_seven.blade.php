@@ -267,28 +267,32 @@
                 <div class="product-swiper-area-one">
                     <div class="swiper mySwiper-portfolio-2-cons">
                         <div class="swiper-wrapper">
-                            @foreach($portfolios as $portfolio)
-                            <div class="swiper-slide">
-                                <div class="signle-product-start"
-                                    data-tmp-cursor="lg text-secondary transparent fw-bold"
-                                    data-tmp-cursor-icon="fa-solid fa-arrow-up-right">
-                                    <a href="{{ url('pages/projects-details?id=' . $portfolio->id) }}" class="thumbnail">
-                                        <img src="{{ Storage::url($portfolio->image) }}" alt="{{ $portfolio->title }}">
-                                    </a>
-                                    <div class="inner-content">
-                                        <a href="#">
-                                            <h5 class="title">{{ $portfolio->title }}</h5>
+                            @foreach ($portfolios as $portfolio)
+                                <div class="swiper-slide">
+                                    <div class="signle-product-start"
+                                        data-tmp-cursor="lg text-secondary transparent fw-bold"
+                                        data-tmp-cursor-icon="fa-solid fa-arrow-up-right">
+                                        <a href="{{ url('pages/projects-details?id=' . $portfolio->id) }}"
+                                            class="thumbnail">
+                                            <img src="{{ Storage::url($portfolio->image) }}"
+                                                alt="{{ $portfolio->title }}">
                                         </a>
-                                        <span class="designation">{{ $portfolio->designation }}</span>
-                                        <div class="tag"></div>
+                                        <div class="inner-content">
+                                            <a href="#">
+                                                <h5 class="title">{{ $portfolio->title }}</h5>
+                                            </a>
+                                            <span class="designation">{{ $portfolio->designation }}</span>
+                                            <div class="tag"></div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             @endforeach
                         </div>
                         <div class="swiper-pagination"></div>
-                        <div class="swiper-button-next" data-tmp-cursor="md transparent fw-bold" data-tmp-cursor-text="Next"></div>
-                        <div class="swiper-button-prev" data-tmp-cursor="md transparent fw-bold" data-tmp-cursor-text="Prev"></div>
+                        <div class="swiper-button-next" data-tmp-cursor="md transparent fw-bold"
+                            data-tmp-cursor-text="Next"></div>
+                        <div class="swiper-button-prev" data-tmp-cursor="md transparent fw-bold"
+                            data-tmp-cursor-text="Prev"></div>
                     </div>
                 </div>
             </div>
@@ -321,28 +325,31 @@
                 <div class="col-lg-6">
                     <div class="faq-accordion">
                         <div class="accordion" id="accordionExample">
-                            @foreach($faqs as $key => $faq)
-                            <div class="accordion-item">
-                                <div class="accordion-header" id="heading{{ $key }}">
-                                    <div class="accordion-button {{ $key == 0 ? '' : 'collapsed' }}" data-bs-toggle="collapse" role="button"
-                                        data-bs-target="#collapse{{ $key }}" aria-expanded="{{ $key == 0 ? 'true' : 'false' }}"
-                                        aria-controls="collapse{{ $key }}">
-                                        <div class="accordion-button-left">
-                                            <i class="fa-regular fa-question"></i>
-                                            <span>{{ $faq->question }}</span>
+                            @foreach ($faqs as $key => $faq)
+                                <div class="accordion-item">
+                                    <div class="accordion-header" id="heading{{ $key }}">
+                                        <div class="accordion-button {{ $key == 0 ? '' : 'collapsed' }}"
+                                            data-bs-toggle="collapse" role="button"
+                                            data-bs-target="#collapse{{ $key }}"
+                                            aria-expanded="{{ $key == 0 ? 'true' : 'false' }}"
+                                            aria-controls="collapse{{ $key }}">
+                                            <div class="accordion-button-left">
+                                                <i class="fa-regular fa-question"></i>
+                                                <span>{{ $faq->question }}</span>
+                                            </div>
+                                            <div class="accordion-button-right">
+                                                <i class="fa-sharp fa-light fa-arrow-right"></i>
+                                            </div>
                                         </div>
-                                        <div class="accordion-button-right">
-                                            <i class="fa-sharp fa-light fa-arrow-right"></i>
+                                    </div>
+                                    <div id="collapse{{ $key }}"
+                                        class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}"
+                                        aria-labelledby="heading{{ $key }}" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            {{ $faq->answer }}
                                         </div>
                                     </div>
                                 </div>
-                                <div id="collapse{{ $key }}" class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}"
-                                    aria-labelledby="heading{{ $key }}" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        {{ $faq->answer }}
-                                    </div>
-                                </div>
-                            </div>
                             @endforeach
                         </div>
                     </div>
@@ -370,115 +377,42 @@
                 </div>
             </div>
             <div class="row g-5">
-
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12" data-sal-delay="150" data-sal="slide-up"
-                    data-sal-duration="800">
-                    <div class="single-team">
-                        <a href="{{ route('team-details') }}" class="thumbnail" data-tmp-cursor="lg transparent fw-bold"
-                            data-tmp-cursor-text="View Details">
-                            <img src="{{ asset('assets/images/team/team-2.png') }}"src="{{ asset('assets/images/team/team-2.png') }}"
-                                alt="Corporate team">
-                        </a>
-                        <div class="content">
-                            <div class="team-name content-with-bg">
-                                <a href="#" class="name-area">
-                                    <h6 class="name">Clade Owen</h6>
-                                </a>
-                                <div class="designation">CEO & Founder</div>
-                            </div>
-                            <div class="share-icon-style-one">
-                                <ul class="social-icons social-icons-with-bg">
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                </ul>
-                                <i class="fa-sharp fa-solid fa-share-nodes"></i>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12" data-sal-delay="250" data-sal="slide-up"
-                    data-sal-duration="800">
-                    <div class="single-team">
-                        <a href="{{ route('team-details') }}" class="thumbnail" data-tmp-cursor="lg transparent fw-bold"
-                            data-tmp-cursor-text="View Details">
-                            <img src="{{ asset('assets/images/team/team-3.png') }}"src="{{ asset('assets/images/team/team-3.png') }}"
-                                alt="Corporate team">
-                        </a>
-                        <div class="content">
-                            <div class="team-name content-with-bg">
-                                <a href="#" class="name-area">
-                                    <h6 class="name">John Lee</h6>
-                                </a>
-                                <div class="designation">CEO & Founder</div>
-                            </div>
-                            <div class="share-icon-style-one">
-                                <ul class="social-icons social-icons-with-bg">
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                </ul>
-                                <i class="fa-sharp fa-solid fa-share-nodes"></i>
+                @foreach ($teams as $team)
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12" data-sal-delay="150" data-sal="slide-up"
+                        data-sal-duration="800">
+                        <div class="single-team">
+                            <a href="{{ route('team-details') }}" class="thumbnail">
+                                <img src="{{ asset($team->image) }}" alt="{{ $team->name }}">
+                            </a>
+                            <div class="content">
+                                <div class="team-name content-with-bg">
+                                    <a href="#" class="name-area">
+                                        <h6 class="name">{{ $team->name }}</h6>
+                                    </a>
+                                    <div class="designation">{{ $team->designation }}</div>
+                                </div>
+                                <div class="share-icon-style-one">
+                                    <ul class="social-icons social-icons-with-bg">
+                                        @if ($team->facebook)
+                                            <li><a href="{{ $team->facebook }}"><i
+                                                        class="fa-brands fa-facebook-f"></i></a></li>
+                                        @endif
+                                        @if ($team->linkedin)
+                                            <li><a href="{{ $team->linkedin }}"><i
+                                                        class="fa-brands fa-linkedin-in"></i></a></li>
+                                        @endif
+                                        @if ($team->twitter)
+                                            <li><a href="{{ $team->twitter }}"><i class="fa-brands fa-twitter"></i></a>
+                                            </li>
+                                        @endif
+                                    </ul>
+                                    <i class="fa-sharp fa-solid fa-share-nodes"></i>
+                                </div>
                             </div>
                         </div>
-
                     </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12" data-sal-delay="350" data-sal="slide-up"
-                    data-sal-duration="800">
-                    <div class="single-team">
-                        <a href="{{ route('team-details') }}" class="thumbnail" data-tmp-cursor="lg transparent fw-bold"
-                            data-tmp-cursor-text="View Details">
-                            <img src="{{ asset('assets/images/team/team-5.png') }}"src="{{ asset('assets/images/team/team-5.png') }}"
-                                alt="Corporate team">
-                        </a>
-                        <div class="content">
-                            <div class="team-name content-with-bg">
-                                <a href="#" class="name-area">
-                                    <h6 class="name">William John</h6>
-                                </a>
-                                <div class="designation">CEO & Founder</div>
-                            </div>
-                            <div class="share-icon-style-one">
-                                <ul class="social-icons social-icons-with-bg">
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                </ul>
-                                <i class="fa-sharp fa-solid fa-share-nodes"></i>
-                            </div>
-                        </div>
+                @endforeach
 
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12" data-sal-delay="350" data-sal="slide-up"
-                    data-sal-duration="800">
-                    <div class="single-team">
-                        <a href="{{ route('team-details') }}" class="thumbnail" data-tmp-cursor="lg transparent fw-bold"
-                            data-tmp-cursor-text="View Details">
-                            <img src="{{ asset('assets/images/team/team-1.png') }}"src="{{ asset('assets/images/team/team-1.png') }}"
-                                alt="Corporate team">
-                        </a>
-                        <div class="content">
-                            <div class="team-name content-with-bg">
-                                <a href="#" class="name-area">
-                                    <h6 class="name">William John</h6>
-                                </a>
-                                <div class="designation">CEO & Founder</div>
-                            </div>
-                            <div class="share-icon-style-one">
-                                <ul class="social-icons social-icons-with-bg">
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                </ul>
-                                <i class="fa-sharp fa-solid fa-share-nodes"></i>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
             </div>
         </div>
     </div>
