@@ -15,6 +15,7 @@
         <div class="swiper mySwiper-banner-one-construction">
             <div class="swiper-wrapper">
                 @foreach ($banners as $key => $banner)
+                    {{ $banner->image }}
                     <div class="swiper-slide">
                         <div class="tmp-banner-area bg_image-{{ $key + 1 }} bg_image banner-one-height-control construction-2 tmp-section-gap"
                             style="background-image: url('{{ Storage::url($banner->image) }}');">
@@ -76,15 +77,14 @@
     <div class="best-service-we-provide tmp-section-gapTop">
         <div class="container">
             <div class="row g-5">
-                @foreach($services as $key => $service)
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-12"
-                         data-sal-delay="{{ 150 + ($key * 100) }}"
-                         data-sal="slide-up"
-                         data-sal-duration="800">
+                @foreach ($services as $key => $service)
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-12" data-sal-delay="{{ 150 + $key * 100 }}"
+                        data-sal="slide-up" data-sal-duration="800">
 
                         <div class="service-inner financial-service-inner agency-service feature-service">
                             <div class="icon">
-                                <img src="{{ Storage::url($service->image) }}" alt="{{ $service->title }}" width="60" height="60">
+                                <img src="{{ Storage::url($service->image) }}" alt="{{ $service->title }}" width="60"
+                                    height="60">
                             </div>
                             <div class="content">
                                 <h2 class="title">{{ $service->title }}</h2>
@@ -149,8 +149,8 @@
                                 </span>
                             </div>
                             <div class="progress">
-                                <div class="progress-bar wow fadeInLeft bg--primary" role="progressbar"
-                                    style="width: 85%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                <div class="progress-bar wow fadeInLeft bg--primary" role="progressbar" style="width: 85%"
+                                    aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                             </div>
                         </div>
                         <div class="single-progress-area progress-stye-one" data-sal-delay="300" data-sal="slide-up"
@@ -336,64 +336,41 @@
                 <div class="col-lg-12">
                     <div class="section-head">
                         <div class="section-sub-title center-title">
-                            <img src="{{ asset('assets/images/services/section-custom-menubar.png ') }}"src="{{ asset('assets/images/services/section-custom-menubar.png ') }}"
+                            <img src="{{ asset('assets/images/services/section-custom-menubar.png') }}"
                                 alt="Corporate_service">
-                            <span class="subtitle">15000 Trusted</span>
+                            <span class="subtitle">Trusted</span>
                         </div>
                         <h2 class="title split-collab">Happy customers</h2>
                     </div>
                 </div>
             </div>
             <div class="row g-5 mt--20 counter_animation">
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim">
-                    <div class="count-box counter-style-4 text-center">
-                        <div>
-                            <h3 class="title"><span class="counter">1538</span>+</h3>
+                @foreach ($customersCounts as $customerCount)
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim">
+                        <div class="count-box counter-style-4 text-center">
+                            <div>
+                                <h3 class="title">
+                                    <span class="counter">{{ $customerCount->count }}</span>{{ $customerCount->suffix }}
+                                </h3>
+                            </div>
+                            <h5 class="counter-title">{{ $customerCount->title }}</h5>
                         </div>
-                        <h5 class="counter-title">Happy Clients.</h5>
                     </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim" data-sal-delay="100">
-                    <div class="count-box counter-style-4 text-center">
-                        <div>
-                            <h3 class="title"><span class="counter">575</span>K+</h3>
-                        </div>
-                        <h5 class="counter-title">Employees</h5>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim" data-sal-delay="200">
-                    <div class="count-box counter-style-4 text-center">
-                        <div>
-                            <h3 class="title"><span class="counter">690</span>+</h3>
-                        </div>
-                        <h5 class="counter-title">Useful Programs</h5>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6 col-sm-6 col-12 counter__anim" data-sal-delay="300">
-                    <div class="count-box counter-style-4 text-center">
-                        <div>
-                            <h3 class="title"><span class="counter">500</span>M</h3>
-                        </div>
-                        <h5 class="counter-title">Useful Programs</h5>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
-    <!-- End Main Counter up-5 Area  -->
 
+    <!-- End Main Counter up-5 Area  -->
 
     <!-- Tmp Servisec Processs Area Two Start -->
     <div class="tpm-services-process-area tmp-section-gapBottom">
         <div class="container">
-            <div class="row" data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+            <div class="row">
                 <div class="col-lg-12">
                     <div class="section-head">
                         <div class="section-sub-title center-title">
-                            <img src="{{ asset('assets/images/services/section-custom-menubar.png ') }}"src="{{ asset('assets/images/services/section-custom-menubar.png ') }}"
+                            <img src="{{ asset('assets/images/services/section-custom-menubar.png') }}"
                                 alt="Corporate_service">
                             <span class="subtitle">OUR work process</span>
                         </div>
@@ -403,83 +380,29 @@
             </div>
 
             <div class="row g-5">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up"
-                    data-sal-duration="800">
-                    <div class="single-services construction">
-                        <div class="services-inner">
-                            <div class="thumbnail thumbnail-rounded border-top-left hover-animation">
-                                <a href="#">
-                                    <img src="{{ asset('assets/images/services/services-round-1.png') }}"src="{{ asset('assets/images/services/services-round-1.png') }}"
-                                        alt="Business consulting services">
-                                    <div class="number-bg-round">
-                                        <span>01</span>
-                                    </div>
-                                </a>
-
-                            </div>
-                            <div class="services-content services-content-style-1 text-center">
-                                <h5 class="title">Meeting Client</h5>
-                                <p class="description">
-                                    Continue indulged speaking the was out horrible for domestic position. Seeing rather her
-                                    you not esteem men settle genius excuse.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="250" data-sal="slide-up"
-                    data-sal-duration="800">
-                    <div class="single-services construction">
-                        <div class="services-inner">
-                            <div class="thumbnail thumbnail-rounded border-top-left hover-animation">
-                                <a href="#"><img
-                                        src="{{ asset('assets/images/services/services-round-2.png') }}"src="{{ asset('assets/images/services/services-round-2.png') }}"
-                                        alt="Business consulting services">
-                                    <div class="number-bg-round">
-                                        <span>02</span>
-                                    </div>
-                                </a>
-
-                            </div>
-                            <div class="services-content services-content-style-1 text-center">
-                                <h5 class="title">Project Strategy</h5>
-                                <p class="description">
-                                    Continue indulged speaking the was out horrible for domestic position. Seeing rather her
-                                    you not esteem men settle genius excuse.
-                                </p>
+                @foreach ($workProcesses as $process)
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="single-services construction">
+                            <div class="services-inner">
+                                <div class="thumbnail thumbnail-rounded border-top-left hover-animation">
+                                    <a href="#">
+                                        {{-- {{ dd(Storage::url($process->image)) }} --}}
+                                        <img src="{{ asset($process->image) }}" alt="{{ $process->title }}">
+                                        <div class="number-bg-round">
+                                            <span>{{ $process->step_number }}</span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="services-content services-content-style-1 text-center">
+                                    <h5 class="title">{{ $process->title }}</h5>
+                                    <p class="description">
+                                        {{ $process->description }}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="350" data-sal="slide-up"
-                    data-sal-duration="800">
-                    <div class="single-services construction">
-                        <div class="services-inner">
-                            <div class="thumbnail thumbnail-rounded border-top-left hover-animation">
-                                <a href="#"><img
-                                        src="{{ asset('assets/images/services/services-round-3.png') }}"src="{{ asset('assets/images/services/services-round-3.png') }}"
-                                        alt="Business consulting services">
-                                    <div class="number-bg-round">
-                                        <span>03</span>
-                                    </div>
-                            </div></a>
-
-                            <div class="services-content services-content-style-1 text-center">
-                                <h5 class="title">Campaign Design</h5>
-                                <p class="description">
-                                    Continue indulged speaking the was out horrible for domestic position. Seeing rather her
-                                    you not esteem men settle genius excuse.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
+                @endforeach
             </div>
         </div>
     </div>

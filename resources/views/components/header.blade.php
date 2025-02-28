@@ -33,7 +33,7 @@
                                     </li>
                                     <li>
                                         <a class="nav-link" href="#portfolio">
-                                            <span class="rolling-text">portfolio</span>
+                                            <span class="rolling-text">PORTFOLIO</span>
                                         </a>
                                     </li>
                                     <li>

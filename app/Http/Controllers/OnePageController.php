@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Banner;
 use App\Models\Service;
-
+use App\Models\CustomersCount;
+use App\Models\WorkProcess;
 class OnePageController extends Controller
 {
     public function onePage_one()
@@ -40,14 +41,14 @@ class OnePageController extends Controller
 
     public function onePage_seven()
     {
-        $banners = Banner::latest()->limit(3)->get(); // Fetch the latest 3 banners
-        $services = Service::latest()->limit(3)->get(); // Fetch the latest 3 services
+        $banners = Banner::latest()->limit(3)->get();
+        $services = Service::latest()->limit(3)->get();
+        $customersCounts = CustomersCount::all(); // Fetch all customer count data
+        $workProcesses = WorkProcess::orderBy('step_number')->get();
 
-        logger($banners);
-        logger($services);
-
-        return view('OnePage/onepage_seven', compact('banners', 'services'));
+        return view('OnePage/onepage_seven', compact('banners', 'services', 'customersCounts','workProcesses'));
     }
+
 
 
 
