@@ -387,7 +387,7 @@
                                 <div class="thumbnail thumbnail-rounded border-top-left hover-animation">
                                     <a href="#">
                                         {{-- {{ dd(Storage::url($process->image)) }} --}}
-                                        <img src="{{ asset($process->image) }}" alt="{{ $process->title }}">
+                                        <img src="{{ Storage::url($process->image) }}" alt="{{ $process->title }}">
                                         <div class="number-bg-round">
                                             <span>{{ $process->step_number }}</span>
                                         </div>
