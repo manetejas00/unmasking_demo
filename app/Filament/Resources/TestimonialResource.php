@@ -15,7 +15,6 @@ use Filament\Tables\Columns\TextColumn;
 class TestimonialResource extends Resource
 {
     protected static ?string $model = Testimonial::class;
-    protected static ?string $navigationIcon = 'heroicon-o-chat-alt-2';
 
     public static function form(Forms\Form $form): Forms\Form
     {
