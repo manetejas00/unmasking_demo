@@ -765,7 +765,7 @@
                             <div class="blog-inner">
                                 <div class="thumbnail">
                                     <a href="{{ route('blog-details', ['id' => $blog->id]) }}">
-                                        <img src="{{ asset($blog->image ?? 'assets/images/blog/default.png') }}"
+                                        <img src="{{ Storage::url($blog->image ?? 'assets/images/blog/default.png') }}"
                                             alt="{{ $blog->title }}">
                                     </a>
 
