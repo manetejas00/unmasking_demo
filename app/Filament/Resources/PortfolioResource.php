@@ -24,7 +24,6 @@ class PortfolioResource extends Resource
 
             // 🆕 Additional Fields
             Forms\Components\TextInput::make('client')->label('Client Name'),
-            Forms\Components\TextInput::make('category')->label('Category'),
             Forms\Components\Select::make('category_id')
                 ->label('Category')
                 ->relationship('category', 'name')
