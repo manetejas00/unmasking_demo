@@ -73,10 +73,6 @@
     </div>
     <!-- tmp banner area end -->
 
-    <!-- tmp service area start -->
-
-    <!-- tmp service area end -->
-
     <!-- Tpm About Area Start  -->
     <div class="about-area tmp-section-gap about-style-one" id="about">
         <div class="container">
@@ -244,7 +240,8 @@
                                 <div class="thumbnail thumbnail-rounded border-top-left hover-animation">
                                     <a href="#">
                                         {{-- {{ dd(Storage::url($process->image)) }} --}}
-                                        <img src="{{ Storage::url($process->image) }}" alt="{{ $process->title }}">
+                                        <img src="{{ Storage::url($process->image) }}" alt="{{ $process->title }}" width="350"
+                                        height="350">
                                         <div class="number-bg-round">
                                             <span>{{ $process->step_number }}</span>
                                         </div>
