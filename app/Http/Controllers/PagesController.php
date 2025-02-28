@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Portfolio;
 
 class PagesController extends Controller
 {
@@ -31,9 +32,18 @@ class PagesController extends Controller
         return view('pages/project-slider');
     }
 
-    public function projects_details()
+    public function projects_details(Request $request)
     {
-        return view('pages/projects-details');
+        // Ensure an ID is provided
+    if (!$request->has('id')) {
+        abort(404); // Show 404 page if no ID is provided
+    }
+
+    // Fetch project details by ID
+    $portfolio = Portfolio::findOrFail($request->id);
+
+    // Pass the data to the view
+    return view('pages.projects-details', compact('portfolio'));
     }
 
     public function projects_details_2()

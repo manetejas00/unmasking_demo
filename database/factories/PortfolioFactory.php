@@ -14,7 +14,15 @@ class PortfolioFactory extends Factory {
             'sub_title' => $this->faker->sentence(3),
             'image' => 'portfolio-' . rand(7, 12) . '.png', // Mock images
             'designation' => $this->faker->jobTitle(),
+
+            // 🆕 Additional Fields
+            'client' => $this->faker->name(),
+            'category' => $this->faker->word(),
+            'date' => $this->faker->date(),
+            'address' => $this->faker->address(),
+
+            // 🆕 Randomly Generated Page Content
+            'page_content' => $this->faker->paragraphs(3, true),
         ];
     }
 }
-

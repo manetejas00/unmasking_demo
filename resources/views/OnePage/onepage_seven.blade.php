@@ -273,7 +273,7 @@
                                 <div class="signle-product-start"
                                     data-tmp-cursor="lg text-secondary transparent fw-bold"
                                     data-tmp-cursor-icon="fa-solid fa-arrow-up-right">
-                                    <a href="#" class="thumbnail">
+                                    <a href="{{ url('pages/projects-details?id=' . $portfolio->id) }}" class="thumbnail">
                                         <img src="{{ Storage::url($portfolio->image) }}" alt="{{ $portfolio->title }}">
                                     </a>
                                     <div class="inner-content">
