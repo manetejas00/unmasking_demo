@@ -519,7 +519,7 @@
                             <ul class="brand-list brand-style-1 justify-content-center justify-content-lg-between">
                                 @foreach($brands as $brand)
                                     <li data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                                        <a href="#"><img src="{{ asset($brand->image) }}" alt="{{ $brand->name }}"></a>
+                                        <a href="#"><img src="{{ Storage::url($brand->image) }}" alt="{{ $brand->name }}"></a>
                                     </li>
                                 @endforeach
                             </ul>
