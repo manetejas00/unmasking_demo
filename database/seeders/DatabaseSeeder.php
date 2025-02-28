@@ -48,5 +48,9 @@ class DatabaseSeeder extends Seeder
         if (WorkProcess::count() === 0) {
             WorkProcess::factory()->count(3)->create();
         }
+
+        if (\App\Models\AboutSection::count() === 0) {
+            \App\Models\AboutSection::factory(3)->create();
+        }
     }
 }

@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\Service;
 use App\Models\CustomersCount;
 use App\Models\WorkProcess;
+use App\Models\AboutSection;
 class OnePageController extends Controller
 {
     public function onePage_one()
@@ -45,8 +46,8 @@ class OnePageController extends Controller
         $services = Service::latest()->limit(3)->get();
         $customersCounts = CustomersCount::all(); // Fetch all customer count data
         $workProcesses = WorkProcess::orderBy('step_number')->get();
-
-        return view('OnePage/onepage_seven', compact('banners', 'services', 'customersCounts','workProcesses'));
+        $about = AboutSection::first();
+        return view('OnePage/onepage_seven', compact('banners', 'services', 'customersCounts','workProcesses','about'));
     }
 
 
