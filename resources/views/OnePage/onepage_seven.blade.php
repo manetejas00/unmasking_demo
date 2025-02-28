@@ -95,7 +95,7 @@
                             <div class="section-sub-title">
                                 <span class="subtitle">ABOUT US</span>
                             </div>
-                                {{ $about->image }}
+                            {{ $about->image }}
                             <h2 class="title split-collab">{{ $about->title }}</h2>
                         </div>
 
@@ -122,8 +122,8 @@
                             <div class="progress">
                                 <div class="progress-bar bg--primary" role="progressbar"
                                     style="width: {{ $about->finance_consulting }}%"
-                                    aria-valuenow="{{ $about->finance_consulting }}" aria-valuemin="0"
-                                    aria-valuemax="100"></div>
+                                    aria-valuenow="{{ $about->finance_consulting }}" aria-valuemin="0" aria-valuemax="100">
+                                </div>
                             </div>
                         </div>
 
@@ -238,14 +238,11 @@
                         <div class="single-services construction">
                             <div class="services-inner">
                                 <div class="thumbnail thumbnail-rounded border-top-left hover-animation">
-                                    <a href="{{ route('service-details', ['id' => $process->id]) }}" >
-                                        {{-- {{ dd(Storage::url($process->image)) }} --}}
-                                        <img src="{{ Storage::url($process->image) }}" alt="{{ $process->title }}" width="350"
-                                        height="350">
-                                        <div class="number-bg-round">
-                                            <span>{{ $process->step_number }}</span>
-                                        </div>
-                                    </a>
+                                    <img src="{{ Storage::url($process->image) }}" alt="{{ $process->title }}"
+                                        width="350" height="350">
+                                    <div class="number-bg-round">
+                                        <span>{{ $process->step_number }}</span>
+                                    </div>
                                 </div>
                                 <div class="services-content services-content-style-1 text-center">
                                     <h5 class="title">{{ $process->title }}</h5>
@@ -648,8 +645,8 @@
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12" data-sal-delay="350" data-sal="slide-up"
                     data-sal-duration="800">
                     <div class="single-team">
-                        <a href="{{ route('team-details') }}" class="thumbnail"
-                            data-tmp-cursor="lg transparent fw-bold" data-tmp-cursor-text="View Details">
+                        <a href="{{ route('team-details') }}" class="thumbnail" data-tmp-cursor="lg transparent fw-bold"
+                            data-tmp-cursor-text="View Details">
                             <img src="{{ asset('assets/images/team/team-1.png') }}"src="{{ asset('assets/images/team/team-1.png') }}"
                                 alt="Corporate team">
                         </a>
