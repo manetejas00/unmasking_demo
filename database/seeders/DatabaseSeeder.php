@@ -30,51 +30,50 @@ class DatabaseSeeder extends Seeder
 
         // Seed other tables regardless of user presence
         if (Banner::count() == 0) {
-            Banner::factory()->count(10)->create();
+            Banner::factory()->count(6)->create();
         }
 
         if (Category::count() == 0) {
-            Category::factory()->count(10)->create();
+            Category::factory()->count(6)->create();
         }
 
         if (Service::count() == 0) {
-            Service::factory()->count(20)->create();
+            Service::factory()->count(6)->create();
         }
 
         if (CustomersCount::count() == 0) {
-            CustomersCount::factory()->count(4)->create();
+            CustomersCount::factory()->count(6)->create();
         }
 
         if (WorkProcess::count() === 0) {
-            WorkProcess::factory()->count(3)->create();
+            WorkProcess::factory()->count(6)->create();
         }
 
         if (\App\Models\AboutSection::count() === 0) {
-            \App\Models\AboutSection::factory(3)->create();
+            \App\Models\AboutSection::factory(6)->create();
         }
 
         if (\App\Models\Portfolio::count() === 0) {
-            \App\Models\Portfolio::factory(3)->create();
+            \App\Models\Portfolio::factory(6)->create();
         }
         if (\App\Models\Faq::count() === 0) {
-            \App\Models\Faq::factory(3)->create();
+            \App\Models\Faq::factory(6)->create();
         }
         if (\App\Models\Team::count() === 0) {
-            \App\Models\Team::factory(4)->create();
+            \App\Models\Team::factory(6)->create();
         }
         if (\App\Models\Testimonial::count() === 0) {
-            \App\Models\Testimonial::factory(4)->create();
+            \App\Models\Testimonial::factory(6)->create();
         }
         if (\App\Models\Brand::count() === 0) {
-            \App\Models\Brand::factory(8)->create();
+            \App\Models\Brand::factory(6)->create();
         }
         if (\App\Models\ContactMessage::count() === 0) {
-            \App\Models\ContactMessage::factory(8)->create();
+            \App\Models\ContactMessage::factory(6)->create();
         }
-        \App\Models\Blog::factory(8)->create();
-        // if (\App\Models\Blog::count() === 0) {
-        //     \App\Models\Blog::factory(8)->create();
-        // }
+        if (\App\Models\Blog::count() === 0) {
+            \App\Models\Blog::factory(6)->create();
+        }
 
     }
 }

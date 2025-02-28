@@ -388,12 +388,13 @@
                     <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12" data-sal-delay="150" data-sal="slide-up"
                         data-sal-duration="800">
                         <div class="single-team">
-                            <a href="{{ route('team-details') }}" class="thumbnail">
-                                <img src="{{ asset($team->image) }}" alt="{{ $team->name }}">
+                            {{-- {{href="{{ route('team-details') }}"}} --}}
+                            <a style="cursor: default;"  class="thumbnail">
+                                <img src="{{ Storage::url($team->image) }}" alt="{{ $team->name }}">
                             </a>
                             <div class="content">
                                 <div class="team-name content-with-bg">
-                                    <a href="#" class="name-area">
+                                    <a class="name-area">
                                         <h6 class="name">{{ $team->name }}</h6>
                                     </a>
                                     <div class="designation">{{ $team->designation }}</div>
