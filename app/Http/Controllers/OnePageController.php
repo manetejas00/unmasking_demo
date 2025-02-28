@@ -12,6 +12,7 @@ use App\Models\Portfolio;
 use App\Models\Faq;
 use App\Models\Team;
 use App\Models\Testimonial;
+use App\Models\Brand;
 
 class OnePageController extends Controller
 {
@@ -56,10 +57,10 @@ class OnePageController extends Controller
         $faqs = Faq::latest()->get();
         $teams = Team::latest()->get();
         $testimonials = Testimonial::latest()->get();
+        $brands = Brand::latest()->get();
 
-        return view('OnePage/onepage_seven', compact('banners', 'services', 'customersCounts', 'workProcesses', 'about', 'portfolios', 'faqs', 'teams', 'testimonials'));
+        return view('OnePage/onepage_seven', compact('banners', 'services', 'customersCounts', 'workProcesses', 'about', 'portfolios', 'faqs', 'teams', 'testimonials', 'brands'));
     }
-
 
     public function onePage_eight()
     {

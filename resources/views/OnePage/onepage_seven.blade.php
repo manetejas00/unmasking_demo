@@ -499,8 +499,6 @@
                                             </div>
                                         </div>
                                     @endforeach
-
-
                                 </div>
                                 <!-- If we need navigation buttons -->
                             </div>
@@ -519,41 +517,18 @@
                     <div class="col-lg-12">
                         <div class="brand-inner tmp-section-gapTop">
                             <ul class="brand-list brand-style-1 justify-content-center justify-content-lg-between">
-                                <li data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
-                                    <a href="#"><img
-                                            src="{{ asset('assets/images/brand/brand-1.png') }}"src="{{ asset('assets/images/brand/brand-1.png') }}"
-                                            alt="Brand Image"></a>
-                                </li>
-
-                                <li data-sal-delay="250" data-sal="slide-up" data-sal-duration="800">
-                                    <a href="#"><img
-                                            src="{{ asset('assets/images/brand/brand-2.png') }}"src="{{ asset('assets/images/brand/brand-2.png') }}"
-                                            alt="Brand Image"></a>
-                                </li>
-
-                                <li data-sal-delay="350" data-sal="slide-up" data-sal-duration="800">
-                                    <a href="#"><img
-                                            src="{{ asset('assets/images/brand/brand-3.png') }}"src="{{ asset('assets/images/brand/brand-3.png') }}"
-                                            alt="Brand Image"></a>
-                                </li>
-
-                                <li data-sal-delay="450" data-sal="slide-up" data-sal-duration="800">
-                                    <a href="#"><img
-                                            src="{{ asset('assets/images/brand/brand-4.png') }}"src="{{ asset('assets/images/brand/brand-4.png') }}"
-                                            alt="Brand Image"></a>
-                                </li>
-                                <li data-sal-delay="550" data-sal="slide-up" data-sal-duration="800">
-                                    <a href="#"><img
-                                            src="{{ asset('assets/images/brand/brand-5.png') }}"src="{{ asset('assets/images/brand/brand-5.png') }}"
-                                            alt="Brand Image"></a>
-                                </li>
-
+                                @foreach($brands as $brand)
+                                    <li data-sal-delay="150" data-sal="slide-up" data-sal-duration="800">
+                                        <a href="#"><img src="{{ asset($brand->image) }}" alt="{{ $brand->name }}"></a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <!-- End Brand Area  -->
     </div>
     <!-- End Testimonial with brand  -->
