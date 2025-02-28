@@ -10,6 +10,7 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->string('image'); // Path to the image
+            $table->string('detail_image'); // Path to the image
             $table->string('sub_title')->nullable(); // Optional field
             $table->string('designation')->nullable();
             $table->timestamps();

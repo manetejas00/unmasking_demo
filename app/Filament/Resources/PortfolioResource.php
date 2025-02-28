@@ -17,6 +17,7 @@ class PortfolioResource extends Resource {
             Forms\Components\TextInput::make('title')->required(),
             Forms\Components\TextInput::make('sub_title'),
             Forms\Components\FileUpload::make('image')->image()->directory('portfolio'),
+            Forms\Components\FileUpload::make('detail_image')->image()->directory('portfolio'),
             Forms\Components\TextInput::make('designation'),
 
             // 🆕 Additional Fields

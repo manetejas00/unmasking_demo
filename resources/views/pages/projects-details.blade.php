@@ -15,7 +15,7 @@
             <div class="col-lg-12">
                 <div class="projects-details-inner">
                     <div class="thumbnail grow position-relative">
-                        <img src="{{ Storage::url($portfolio->image) }}" alt="{{ $portfolio->title }}"width="1275"
+                        <img src="{{ Storage::url($portfolio->detail_image) }}" alt="{{ $portfolio->title }}"width="1275"
                         height="635">
                     </div>
                     <div class="clients-projects-details">
