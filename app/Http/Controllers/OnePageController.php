@@ -9,6 +9,7 @@ use App\Models\CustomersCount;
 use App\Models\WorkProcess;
 use App\Models\AboutSection;
 use App\Models\Portfolio;
+use App\Models\Faq;
 class OnePageController extends Controller
 {
     public function onePage_one()
@@ -42,16 +43,18 @@ class OnePageController extends Controller
     }
 
     public function onePage_seven()
-    {
-        $banners = Banner::latest()->limit(3)->get();
-        $services = Service::latest()->limit(3)->get();
-        $customersCounts = CustomersCount::all(); // Fetch all customer count data
-        $workProcesses = WorkProcess::orderBy('step_number')->get();
-        $about = AboutSection::first();
-        $portfolios = Portfolio::latest()->get(); // Fetch all portfolio items
+{
+    $banners = Banner::latest()->limit(3)->get();
+    $services = Service::latest()->limit(3)->get();
+    $customersCounts = CustomersCount::all();
+    $workProcesses = WorkProcess::orderBy('step_number')->get();
+    $about = AboutSection::first();
+    $portfolios = Portfolio::latest()->get();
+    $faqs = Faq::latest()->get(); // Fetch FAQs
 
-        return view('OnePage/onepage_seven', compact('banners', 'services', 'customersCounts', 'workProcesses', 'about', 'portfolios'));
-    }
+    return view('OnePage/onepage_seven', compact('banners', 'services', 'customersCounts', 'workProcesses', 'about', 'portfolios', 'faqs'));
+}
+
 
 
 
