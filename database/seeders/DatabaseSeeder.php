@@ -62,5 +62,8 @@ class DatabaseSeeder extends Seeder
         if (\App\Models\Team::count() === 0) {
             \App\Models\Team::factory(4)->create();
         }
+        if (\App\Models\Testimonial::count() === 0) {
+            \App\Models\Testimonial::factory(4)->create();
+        }
     }
 }

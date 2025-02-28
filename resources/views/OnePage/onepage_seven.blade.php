@@ -467,143 +467,39 @@
                                 <!-- Additional required wrapper -->
                                 <div class="swiper-wrapper">
 
-                                    <div class="swiper-slide">
-                                        <div class="single-card card-horizontal">
-                                            <div class="card-inner">
-                                                <div class="content">
-                                                    <div class="rating rating-style-three">
-                                                        <div class="stars-group">
-                                                            <div class="star">
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star-half-stroke"></i>
+                                    @foreach ($testimonials as $testimonial)
+                                        <div class="swiper-slide">
+                                            <div class="single-card card-horizontal">
+                                                <div class="card-inner">
+                                                    <div class="content">
+                                                        <div class="rating rating-style-three">
+                                                            <div class="stars-group">
+                                                                <div class="star">
+                                                                    <i class="fa-solid fa-star"></i>
+                                                                    <i class="fa-solid fa-star"></i>
+                                                                    <i class="fa-solid fa-star"></i>
+                                                                    <i class="fa-solid fa-star"></i>
+                                                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                                                </div>
                                                             </div>
                                                         </div>
+                                                        <p class="description">{{ $testimonial->testimonial }}</p>
+                                                        <div class="content content-without-bg">
+                                                            <div class="name">{{ $testimonial->name }}</div>
+                                                            <div class="designation">{{ $testimonial->designation }}</div>
+                                                        </div>
                                                     </div>
-                                                    <p class="description">Its incredible. its really wonderful. company
-                                                        has completely surpassed our expect. Urna porttitor rhoncus dolor
-                                                        purus non enim praesent at the facilisis lectus. Adipiscing
-                                                        tristique risus.</p>
-                                                    <div class="content content-without-bg">
-                                                        <div class="name">Clade Owen</div>
-                                                        <div class="designation">CEO &amp; Founder</div>
-                                                    </div>
-                                                </div>
-                                                <div class="thumbnail">
-                                                    <img src="{{ asset('assets/images/testimonial/testimonial-1.jpg') }}"src="{{ asset('assets/images/testimonial/testimonial-1.jpg') }}"
-                                                        alt="testimonial">
-                                                    <div class="icon icon-quote">
-                                                        <i class="fa-duotone fa-quote-left"></i>
+                                                    <div class="thumbnail">
+                                                        <img src="{{ asset($testimonial->image) }}" alt="testimonial">
+                                                        <div class="icon icon-quote">
+                                                            <i class="fa-duotone fa-quote-left"></i>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="single-card card-horizontal">
-                                            <div class="card-inner">
-                                                <div class="content">
-                                                    <div class="rating rating-style-three">
-                                                        <div class="stars-group">
-                                                            <div class="star">
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star-half-stroke"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <p class="description">Its incredible. its really wonderful. company
-                                                        has completely surpassed our expect. Urna porttitor rhoncus dolor
-                                                        purus non enim praesent at the facilisis lectus. Adipiscing
-                                                        tristique risus.</p>
+                                    @endforeach
 
-                                                    <div class="content content-without-bg">
-                                                        <div class="name">Nicolas Alvin</div>
-                                                        <div class="designation">Web Developer</div>
-                                                    </div>
-                                                </div>
-                                                <div class="thumbnail">
-                                                    <img src="{{ asset('assets/images/testimonial/testimonial-2.jpg') }}"src="{{ asset('assets/images/testimonial/testimonial-2.jpg') }}"
-                                                        alt="testimonial">
-                                                    <div class="icon icon-quote">
-                                                        <i class="fa-duotone fa-quote-left"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="single-card card-horizontal">
-                                            <div class="card-inner">
-                                                <div class="content">
-                                                    <div class="rating rating-style-three">
-                                                        <div class="stars-group">
-                                                            <div class="star">
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star-half-stroke"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <p class="description">Its incredible. its really wonderful. company
-                                                        has completely surpassed our expect. Urna porttitor rhoncus dolor
-                                                        purus non enim praesent at the facilisis lectus. Adipiscing
-                                                        tristique risus.</p>
-                                                    <div class="content content-without-bg">
-                                                        <div class="name">Lara Willie</div>
-                                                        <div class="designation">UX Designer</div>
-                                                    </div>
-                                                </div>
-                                                <div class="thumbnail">
-                                                    <img src="{{ asset('assets/images/testimonial/testimonial-1.jpg') }}"src="{{ asset('assets/images/testimonial/testimonial-1.jpg') }}"
-                                                        alt="testimonial">
-                                                    <div class="icon icon-quote">
-                                                        <i class="fa-duotone fa-quote-left"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="single-card card-horizontal">
-                                            <div class="card-inner">
-                                                <div class="content">
-                                                    <div class="rating rating-style-three">
-                                                        <div class="stars-group">
-                                                            <div class="star">
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star"></i>
-                                                                <i class="fa-solid fa-star-half-stroke"></i>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <p class="description">Its incredible. its really wonderful. company
-                                                        has completely surpassed our expect. Urna porttitor rhoncus dolor
-                                                        purus non enim praesent at the facilisis lectus. Adipiscing
-                                                        tristique risus.</p>
-                                                    <div class="content content-without-bg">
-                                                        <div class="name">Clade Herbert</div>
-                                                        <div class="designation">CEO and Founder</div>
-                                                    </div>
-                                                </div>
-                                                <div class="thumbnail">
-                                                    <img src="{{ asset('assets/images/testimonial/testimonial-2.jpg') }}"src="{{ asset('assets/images/testimonial/testimonial-2.jpg') }}"
-                                                        alt="testimonial">
-                                                    <div class="icon icon-quote">
-                                                        <i class="fa-duotone fa-quote-left"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
 
                                 </div>
                                 <!-- If we need navigation buttons -->

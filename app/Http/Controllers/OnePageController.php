@@ -11,6 +11,8 @@ use App\Models\AboutSection;
 use App\Models\Portfolio;
 use App\Models\Faq;
 use App\Models\Team;
+use App\Models\Testimonial;
+
 class OnePageController extends Controller
 {
     public function onePage_one()
@@ -52,15 +54,11 @@ class OnePageController extends Controller
         $about = AboutSection::first();
         $portfolios = Portfolio::latest()->get();
         $faqs = Faq::latest()->get();
-        $teams = Team::latest()->get(); // Fetch teams
+        $teams = Team::latest()->get();
+        $testimonials = Testimonial::latest()->get();
 
-        return view('OnePage/onepage_seven', compact('banners', 'services', 'customersCounts', 'workProcesses', 'about', 'portfolios', 'faqs', 'teams'));
+        return view('OnePage/onepage_seven', compact('banners', 'services', 'customersCounts', 'workProcesses', 'about', 'portfolios', 'faqs', 'teams', 'testimonials'));
     }
-
-
-
-
-
 
 
     public function onePage_eight()
