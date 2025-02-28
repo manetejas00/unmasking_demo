@@ -238,11 +238,13 @@
                         <div class="single-services construction">
                             <div class="services-inner">
                                 <div class="thumbnail thumbnail-rounded border-top-left hover-animation">
-                                    <img src="{{ Storage::url($process->image) }}" alt="{{ $process->title }}"
-                                        width="350" height="350">
-                                    <div class="number-bg-round">
-                                        <span>{{ $process->step_number }}</span>
-                                    </div>
+                                    <a style="cursor: default;">
+                                        <img src="{{ Storage::url($process->image) }}" alt="{{ $process->title }}"
+                                            width="350" height="350">
+                                        <div class="number-bg-round">
+                                            <span>{{ $process->step_number }}</span>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="services-content services-content-style-1 text-center">
                                     <h5 class="title">{{ $process->title }}</h5>
