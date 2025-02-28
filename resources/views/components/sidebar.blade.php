@@ -109,7 +109,7 @@
                             <li><a class="mobile-menu-link" href="{{ route('blog') }}">Blog</a></li>
                             <li><a class="mobile-menu-link" href="{{ route('blog-col-1') }}">Blog Col 1</a></li>
                             <li><a class="mobile-menu-link" href="{{ route('blog-col-2') }}">Blog Col 2</a></li>
-                            <li><a class="mobile-menu-link" href="{{ route('blog-details') }}">Blog Details</a></li>
+                            {{-- <li><a class="mobile-menu-link" href="{{ route('blog-details') }}">Blog Details</a></li> --}}
                         </ul>
                     </li>
                     <li class="has-droupdown">

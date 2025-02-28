@@ -87,10 +87,10 @@
                                 <div class="content">
                                     <div class="date"><i class="fa-light fa-calendar-days"></i><span>12 Feb, 2022</span></div>
 
-                                    <a href="{{ route('blog-details') }}">
+                                    {{-- <a href="{{ route('blog-details') }}">
                                         <h6 class="title">Day tree hide from hath
                                             gathered multy</h6>
-                                    </a>
+                                    </a> --}}
                                 </div>
                             </div>
 
@@ -101,10 +101,10 @@
                                 <div class="content">
                                     <div class="date"><i class="fa-light fa-calendar-days"></i><span>12 Feb, 2022</span></div>
 
-                                    <a href="{{ route('blog-details') }}">
+                                    {{-- <a href="{{ route('blog-details') }}">
                                         <h6 class="title">Saving Time Achieving
                                             Success in Business</h6>
-                                    </a>
+                                    </a> --}}
                                 </div>
                             </div>
 

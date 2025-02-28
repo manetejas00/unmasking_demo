@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User; // Import User model
 use App\Models\Service;
-
+use App\Models\Blog;
 
 
 class HomeController extends Controller
@@ -30,10 +30,15 @@ class HomeController extends Controller
         return view('blog-details-2');
     }
 
-    public function blog_details()
+    public function blog_details($id)
     {
-        return view('blog-details');
+        $blog = Blog::find($id); // Use the correct model 'Blog'
+        if (!$blog) {
+            abort(404, 'Blog not found');
+        }
+        return view('blog-details', compact('blog'));
     }
+
 
     public function blog()
     {

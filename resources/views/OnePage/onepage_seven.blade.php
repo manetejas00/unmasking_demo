@@ -15,7 +15,6 @@
         <div class="swiper mySwiper-banner-one-construction">
             <div class="swiper-wrapper">
                 @foreach ($banners as $key => $banner)
-                    {{ $banner->image }}
                     <div class="swiper-slide">
                         <div class="tmp-banner-area bg_image-{{ $key + 1 }} bg_image banner-one-height-control construction-2 tmp-section-gap"
                             style="background-image: url('{{ Storage::url($banner->image) }}');">
@@ -126,10 +125,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="thumbnail-with-title mt--50">
-                            <a href="{{ route('contact') }}" class="tmp-btn btn-primary">Contact Us</a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -179,7 +174,6 @@
             </div>
         </div>
     </div>
-
     <!-- End Service Area  -->
 
     <!-- Start Main Counter up-5 Area  -->
@@ -740,7 +734,7 @@
                 <div class="col-lg-12">
                     <div class="section-head">
                         <div class="section-sub-title center-title">
-                            <img src="{{ asset('assets/images/services/section-custom-menubar.png ') }}"src="{{ asset('assets/images/services/section-custom-menubar.png ') }}"
+                            <img src="{{ asset('assets/images/services/section-custom-menubar.png') }}"
                                 alt="Corporate_service">
                             <span class="subtitle">LATEST BLOG</span>
                         </div>
@@ -750,85 +744,51 @@
             </div>
             <div class="row g-5">
 
-                <div class="col-lg-6 col-md-6 col-sm-12 col1-2" data-sal-delay="150" data-sal="slide-up"
-                    data-sal-duration="800">
-                    <div class="single-blog">
-                        <div class="blog-inner">
-                            <div class="thumbnail">
-                                <a href="{{ route('blog-details') }}"><img
-                                        src="{{ asset('assets/images/blog/blog-12.png') }}"src="{{ asset('assets/images/blog/blog-12.png') }}"
-                                        alt="Business Consulting Blog"></a>
-                                <div class="pmt-blog-meta">
-                                    <ul class="all-meta">
-                                        <li class="date"><span>20</span></li>
-                                        <li class="month"><span>JAN</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-head">
-                                    <span class="name">Sultan Ahmed</span>
-                                    <span class="designation">Consulting</span>
-                                </div>
-                                <div class="blog-body">
-                                    <a href="{{ route('blog-details') }}" class="title-area">
-                                        <h4 class="title">Consulted admitting wooded
-                                            is power acuteness.</h4>
+                @foreach ($blogs as $blog)
+                    <div class="col-lg-6 col-md-6 col-sm-12 col1-2" data-sal-delay="150" data-sal="slide-up"
+                        data-sal-duration="800">
+                        <div class="single-blog">
+                            <div class="blog-inner">
+                                <div class="thumbnail">
+                                    <a href="{{ route('blog-details', ['id' => $blog->id]) }}">
+                                        <img src="{{ asset($blog->image ?? 'assets/images/blog/default.png') }}"
+                                            alt="{{ $blog->title }}">
                                     </a>
-                                    <p class="description">
-                                        There are many variations of passages of Lorem Ipsum available, but the majority
-                                        have suffered.
-                                    </p>
+
+                                    <div class="pmt-blog-meta">
+                                        <ul class="all-meta">
+                                            <li class="date"><span>{{ $blog->created_at->format('d') }}</span></li>
+                                            <li class="month"><span>{{ $blog->created_at->format('M') }}</span></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <a class="btn-read-more" href="{{ route('blog-details') }}">
-                                    <span class="read-more-text">Read More</span>
-                                    <span class="read-more-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                </a>
+                                <div class="blog-content">
+                                    <div class="blog-head">
+                                        <span class="name">{{ $blog->author }}</span>
+                                        <span class="designation">{{ $blog->category }}</span>
+                                    </div>
+                                    <div class="blog-body">
+                                        <a href="{{ route('blog-details', $blog->id) }}" class="title-area">
+                                            <h4 class="title">{{ Str::limit($blog->title, 50) }}</h4>
+                                        </a>
+                                        <p class="description">
+                                            {{ Str::limit($blog->content, 100) }}
+                                        </p>
+                                    </div>
+                                    <a class="btn-read-more" href="{{ route('blog-details', $blog->id) }}">
+                                        <span class="read-more-text">Read More</span>
+                                        <span class="read-more-icon"><i class="fa-solid fa-arrow-right"></i></span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col1-2" data-sal-delay="250" data-sal="slide-up"
-                    data-sal-duration="800">
-                    <div class="single-blog">
-                        <div class="blog-inner">
-                            <div class="thumbnail">
-                                <a href="{{ route('blog-details') }}"><img
-                                        src="{{ asset('assets/images/blog/blog-11.png') }}"src="{{ asset('assets/images/blog/blog-11.png') }}"
-                                        alt="Business Consulting Blog"></a>
-                                <div class="pmt-blog-meta">
-                                    <ul class="all-meta">
-                                        <li class="date"><span>20</span></li>
-                                        <li class="month"><span>JAN</span></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <div class="blog-head">
-                                    <span class="name">Sultan Ahmed</span>
-                                    <span class="designation">Consulting</span>
-                                </div>
-                                <div class="blog-body">
-                                    <a href="{{ route('blog-details') }}" class="title-area">
-                                        <h4 class="title">Grow your business strategy
-                                            with business consulting.</h4>
-                                    </a>
-                                    <p class="description">
-                                        There are many variations of passages of Lorem Ipsum available, but the majority
-                                        have suffered.
-                                    </p>
-                                </div>
-                                <a class="btn-read-more" href="{{ route('blog-details') }}">
-                                    <span class="read-more-text">Read More</span>
-                                    <span class="read-more-icon"><i class="fa-solid fa-arrow-right"></i></span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </div>
+
     <!-- Tmp Blog Area Start  -->
 
     <x-footer />

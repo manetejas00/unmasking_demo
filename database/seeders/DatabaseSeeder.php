@@ -71,5 +71,10 @@ class DatabaseSeeder extends Seeder
         if (\App\Models\ContactMessage::count() === 0) {
             \App\Models\ContactMessage::factory(8)->create();
         }
+        \App\Models\Blog::factory(8)->create();
+        // if (\App\Models\Blog::count() === 0) {
+        //     \App\Models\Blog::factory(8)->create();
+        // }
+
     }
 }

@@ -5,23 +5,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Service extends Model
+class Blog extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'title',
-        'description',
+        'author',
+        'author_name',
+        'content',
         'image',
-        'features',
-        'page_content',
-        'icon_image'
+        'quote',
+        'quote_author',
+        'published_at',
+        'tags',
+        'meta_description',
     ];
 
     protected $casts = [
-        'features' => 'array', // Ensures it is always an array
+        'tags' => 'array',
+        'published_at' => 'date',
     ];
-
     public function categories()
     {
         return $this->belongsToMany(Category::class);

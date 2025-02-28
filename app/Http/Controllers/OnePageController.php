@@ -13,6 +13,7 @@ use App\Models\Faq;
 use App\Models\Team;
 use App\Models\Testimonial;
 use App\Models\Brand;
+use App\Models\Blog;
 
 class OnePageController extends Controller
 {
@@ -59,10 +60,23 @@ class OnePageController extends Controller
         $testimonials = Testimonial::latest()->get();
         $brands = Brand::latest()->limit(4)->get();
 
-        return view('OnePage/onepage_seven', compact('banners', 'services', 'customersCounts', 'workProcesses', 'about', 'portfolios', 'faqs', 'teams', 'testimonials', 'brands'));
+        // Fetch the latest blog posts (limit to 2 for your layout)
+        $blogs = Blog::latest()->limit(2)->get();
+
+        return view('OnePage/onepage_seven', compact(
+            'banners',
+            'services',
+            'customersCounts',
+            'workProcesses',
+            'about',
+            'portfolios',
+            'faqs',
+            'teams',
+            'testimonials',
+            'brands',
+            'blogs'
+        ));
     }
-
-
 
     public function onePage_eight()
     {
