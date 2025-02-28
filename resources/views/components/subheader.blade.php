@@ -22,32 +22,27 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="nav-link" href="#about">
+                                        <a class="nav-link" href="/#about">
                                             <span class="rolling-text">ABOUT</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="nav-link" href="#service">
+                                        <a class="nav-link" href="/#service">
                                             <span class="rolling-text">SERVICES</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="nav-link" href="#portfolio">
+                                        <a class="nav-link" href="/#portfolio">
                                             <span class="rolling-text">PORTFOLIO</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="nav-link" href="#contact1">
+                                        <a class="nav-link" href="/#contact1">
                                             <span class="rolling-text">CONTACT</span>
                                         </a>
                                     </li>
                                 </ul>
                             </nav>
-                        </div>
-
-                        <div class="input-area">
-                            <input type="text" placeholder="Search...">
-                            <i class="fa-light fa-magnifying-glass"></i>
                         </div>
                         <div class="actions-area">
                             <!-- <div class="menu-button" id="search">
