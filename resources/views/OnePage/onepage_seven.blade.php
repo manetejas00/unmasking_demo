@@ -79,7 +79,7 @@
                 <div class="col-lg-6">
                     <div class="about-thumbnail-construction">
                         <div class="image-large">
-                            <img src="{{ asset($about->image) }}" alt="construction_business">
+                            <img src="{{ Storage::url($about->image) }}" alt="construction_business">
                         </div>
                         <div class="shape-bottom-left"></div>
                         <div class="work-done">
