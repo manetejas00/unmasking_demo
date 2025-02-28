@@ -83,7 +83,7 @@
 
                         <div class="service-inner financial-service-inner agency-service feature-service">
                             <div class="icon">
-                                <img src="{{ Storage::url($service->image) }}" alt="{{ $service->title }}" width="60"
+                                <img src="{{ Storage::url($service->icon_image) }}" alt="{{ $service->title }}" width="60"
                                     height="60">
                             </div>
                             <div class="content">
@@ -106,66 +106,70 @@
     </div>
     <!-- tmp service area end -->
 
-        <!-- Tpm About Area Start  -->
-        <div class="about-area tmp-section-gap about-style-one" id="about">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="about-thumbnail-construction">
-                            <div class="image-large">
-                                <img src="{{ asset($about->image) }}" alt="construction_business">
-                            </div>
-                            <div class="shape-bottom-left"></div>
-                            <div class="work-done">
-                                <h3 class="title"><span class="counter">{{ $about->completed_work }}</span>+</h3>
-                                <p>Completed Work</p>
-                            </div>
+    <!-- Tpm About Area Start  -->
+    <div class="about-area tmp-section-gap about-style-one" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-thumbnail-construction">
+                        <div class="image-large">
+                            <img src="{{ asset($about->image) }}" alt="construction_business">
+                        </div>
+                        <div class="shape-bottom-left"></div>
+                        <div class="work-done">
+                            <h3 class="title"><span class="counter">{{ $about->completed_work }}</span>+</h3>
+                            <p>Completed Work</p>
                         </div>
                     </div>
-                    <div class="col-lg-6">
-                        <div class="about-inner">
-                            <div class="section-head text-align-left section-head-one-side">
-                                <div class="section-sub-title">
-                                    <span class="subtitle">ABOUT US</span>
-                                </div>
-                                <h2 class="title split-collab">{{ $about->title }}</h2>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-inner">
+                        <div class="section-head text-align-left section-head-one-side">
+                            <div class="section-sub-title">
+                                <span class="subtitle">ABOUT US</span>
                             </div>
+                                {{ $about->image }}
+                            <h2 class="title split-collab">{{ $about->title }}</h2>
+                        </div>
 
-                            <p class="description">{{ $about->description }}</p>
+                        <p class="description">{{ $about->description }}</p>
 
-                            <!-- Progress bars -->
-                            <div class="single-progress-area progress-stye-one">
-                                <div class="progress-top">
-                                    <p class="name">Consulting Service</p>
-                                    <span class="parcent">{{ $about->consulting_service }}%</span>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg--primary" role="progressbar" style="width: {{ $about->consulting_service }}%"
-                                        aria-valuenow="{{ $about->consulting_service }}" aria-valuemin="0" aria-valuemax="100"></div>
+                        <!-- Progress bars -->
+                        <div class="single-progress-area progress-stye-one">
+                            <div class="progress-top">
+                                <p class="name">Consulting Service</p>
+                                <span class="parcent">{{ $about->consulting_service }}%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg--primary" role="progressbar"
+                                    style="width: {{ $about->consulting_service }}%"
+                                    aria-valuenow="{{ $about->consulting_service }}" aria-valuemin="0" aria-valuemax="100">
                                 </div>
                             </div>
-                            <div class="single-progress-area progress-stye-one">
-                                <div class="progress-top">
-                                    <p class="name">Finance Consulting</p>
-                                    <span class="parcent">{{ $about->finance_consulting }}%</span>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg--primary" role="progressbar"
-                                        style="width: {{ $about->finance_consulting }}%" aria-valuenow="{{ $about->finance_consulting }}"
-                                        aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
+                        </div>
+                        <div class="single-progress-area progress-stye-one">
+                            <div class="progress-top">
+                                <p class="name">Finance Consulting</p>
+                                <span class="parcent">{{ $about->finance_consulting }}%</span>
                             </div>
+                            <div class="progress">
+                                <div class="progress-bar bg--primary" role="progressbar"
+                                    style="width: {{ $about->finance_consulting }}%"
+                                    aria-valuenow="{{ $about->finance_consulting }}" aria-valuemin="0"
+                                    aria-valuemax="100"></div>
+                            </div>
+                        </div>
 
-                            <div class="thumbnail-with-title mt--50">
-                                <a href="{{ route('contact') }}" class="tmp-btn btn-primary">Contact Us</a>
-                            </div>
+                        <div class="thumbnail-with-title mt--50">
+                            <a href="{{ route('contact') }}" class="tmp-btn btn-primary">Contact Us</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!--Tpm About Area End  -->
+    <!--Tpm About Area End  -->
 
     <!-- Start Service Area  -->
     <div class="service-area tmp-section-gapBottom" id="service">
@@ -783,8 +787,8 @@
                 <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12" data-sal-delay="350" data-sal="slide-up"
                     data-sal-duration="800">
                     <div class="single-team">
-                        <a href="{{ route('team-details') }}" class="thumbnail" data-tmp-cursor="lg transparent fw-bold"
-                            data-tmp-cursor-text="View Details">
+                        <a href="{{ route('team-details') }}" class="thumbnail"
+                            data-tmp-cursor="lg transparent fw-bold" data-tmp-cursor-text="View Details">
                             <img src="{{ asset('assets/images/team/team-1.png') }}"src="{{ asset('assets/images/team/team-1.png') }}"
                                 alt="Corporate team">
                         </a>

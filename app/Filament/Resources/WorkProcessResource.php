@@ -23,7 +23,7 @@ class WorkProcessResource extends Resource
         return $form->schema([
             TextInput::make('title')->required(),
             Textarea::make('description')->required(),
-            FileUpload::make('image')->directory('work_processes')->image()->required(),
+            FileUpload::make('image')->directory('work_processes')->image()->required()->preserveFilenames(),
             TextInput::make('step_number')
                 ->integer()
                 ->required()

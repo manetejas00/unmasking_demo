@@ -33,7 +33,10 @@ class ServiceResource extends Resource
 
                 Forms\Components\FileUpload::make('image')
                     ->directory('services')
-                    ->image(),
+                    ->image()->preserveFilenames(),
+                Forms\Components\FileUpload::make('icon_image')
+                    ->directory('services')
+                    ->image()->preserveFilenames(),
                 Forms\Components\Select::make('categories')
                     ->multiple()
                     ->relationship('categories', 'name')

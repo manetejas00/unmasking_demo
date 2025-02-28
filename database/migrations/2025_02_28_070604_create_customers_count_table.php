@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
-        Schema::create('customers_count', function (Blueprint $table) {
+        Schema::create('customers_counts', function (Blueprint $table) {
             $table->id();
             $table->string('title'); // e.g., Happy Clients, Employees, Useful Programs
             $table->bigInteger('count'); // e.g., 1538, 575000, 690
@@ -18,7 +18,7 @@ return new class extends Migration {
 
     public function down(): void
     {
-        Schema::dropIfExists('customers_count');
+        Schema::dropIfExists('customers_counts');
     }
 };
 

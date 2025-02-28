@@ -9,13 +9,14 @@ return new class extends Migration {
     {
         Schema::table('services', function (Blueprint $table) {
             $table->longText('page_content')->after('description')->nullable();
+            $table->string('icon_image')->after('page_content')->nullable();
         });
     }
 
     public function down()
     {
         Schema::table('services', function (Blueprint $table) {
-            $table->dropColumn('page_content');
+            $table->dropColumn(['page_content', 'icon_image']);
         });
     }
 };

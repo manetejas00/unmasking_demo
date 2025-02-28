@@ -24,7 +24,7 @@ class BannerResource extends Resource
                 TextInput::make('title')->required()->maxLength(255),
                 TextInput::make('subtitle')->maxLength(255),
                 RichEditor::make('description')->nullable(),
-                FileUpload::make('image')->image()->directory('banners')->preserveFilenames(),
+                FileUpload::make('image')->image()->directory('banner')->preserveFilenames(),
                 TextInput::make('button_text')->maxLength(255),
                 TextInput::make('button_link')->url(),
                 TextInput::make('video_link')->url(),

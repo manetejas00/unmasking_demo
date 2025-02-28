@@ -9,7 +9,7 @@ class CustomersCount extends Model
 {
     use HasFactory;
 
-    protected $table = 'customers_count';
+    protected $table = 'customers_counts';
 
     protected $fillable = ['title', 'count', 'suffix'];
 }

@@ -9,6 +9,11 @@ class WorkProcess extends Model
 {
     use HasFactory; // ✅ This enables the factory method
 
-    protected $fillable = ['title', 'description', 'image', 'step_number'];
+    protected $fillable = [
+        'title',
+        'description',
+        'image',
+        'step_number'
+    ];
 }
 

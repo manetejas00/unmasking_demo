@@ -22,7 +22,7 @@ class AboutSectionResource extends Resource
         return $form->schema([
             TextInput::make('title')->required(),
             Textarea::make('description')->required(),
-            FileUpload::make('image')->directory('about')->image(),
+            FileUpload::make('image')->directory('about')->image()->preserveFilenames(),
             TextInput::make('completed_work')->numeric()->required(),
             TextInput::make('consulting_service')->numeric()->required(),
             TextInput::make('finance_consulting')->numeric()->required(),
