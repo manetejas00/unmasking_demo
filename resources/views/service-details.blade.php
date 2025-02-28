@@ -9,7 +9,7 @@
 @section('content')
     <x-subheader />
 
-    <x-sidebar />
+    <x-subsidebar />
 
     <div class="tmp-service-section tmp-section-gap">
         <div class="container">
