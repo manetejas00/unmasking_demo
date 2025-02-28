@@ -8,11 +8,13 @@ use Filament\Forms;
 use Filament\Tables;
 use Filament\Resources\Resource;
 
-class PortfolioResource extends Resource {
+class PortfolioResource extends Resource
+{
     protected static ?string $model = Portfolio::class;
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
-    public static function form(Forms\Form $form): Forms\Form {
+    public static function form(Forms\Form $form): Forms\Form
+    {
         return $form->schema([
             Forms\Components\TextInput::make('title')->required(),
             Forms\Components\TextInput::make('sub_title'),
@@ -23,6 +25,10 @@ class PortfolioResource extends Resource {
             // 🆕 Additional Fields
             Forms\Components\TextInput::make('client')->label('Client Name'),
             Forms\Components\TextInput::make('category')->label('Category'),
+            Forms\Components\Select::make('category_id')
+                ->label('Category')
+                ->relationship('category', 'name')
+                ->required(),
             Forms\Components\DatePicker::make('date')->label('Project Date'),
             Forms\Components\TextInput::make('address')->label('Address'),
 
@@ -34,7 +40,8 @@ class PortfolioResource extends Resource {
         ]);
     }
 
-    public static function table(Tables\Table $table): Tables\Table {
+    public static function table(Tables\Table $table): Tables\Table
+    {
         return $table->columns([
             Tables\Columns\TextColumn::make('title')->sortable()->searchable(),
             Tables\Columns\TextColumn::make('sub_title')->sortable()->searchable(),
@@ -43,7 +50,7 @@ class PortfolioResource extends Resource {
 
             // 🆕 Additional Columns
             Tables\Columns\TextColumn::make('client')->sortable()->searchable(),
-            Tables\Columns\TextColumn::make('category')->sortable()->searchable(),
+            Tables\Columns\TextColumn::make('category.name')->label('Category')->sortable()->searchable(),
             Tables\Columns\TextColumn::make('date')->label('Project Date')->sortable(),
             Tables\Columns\TextColumn::make('address')->sortable()->searchable(),
 
@@ -53,17 +60,18 @@ class PortfolioResource extends Resource {
                 ->limit(50) // Show only first 50 characters
                 ->sortable(),
         ])
-        ->filters([])
-        ->actions([
-            Tables\Actions\EditAction::make(),
-            Tables\Actions\DeleteAction::make(),
-        ])
-        ->bulkActions([
-            Tables\Actions\DeleteBulkAction::make(),
-        ]);
+            ->filters([])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\DeleteBulkAction::make(),
+            ]);
     }
 
-    public static function getPages(): array {
+    public static function getPages(): array
+    {
         return [
             'index' => Pages\ListPortfolios::route('/'),
             'create' => Pages\CreatePortfolio::route('/create'),

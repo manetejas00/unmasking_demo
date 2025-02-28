@@ -39,7 +39,7 @@
                                     </div>
                                     <div class="content">
                                         <h4 class="subtitle">Category:</h4>
-                                        <h5 class="category">{{ $portfolio->category ?? 'N/A' }}</h5>
+                                        <h5 class="category">{{ $portfolio->category->name ?? 'N/A' }}</h5>
                                     </div>
                                 </div>
 

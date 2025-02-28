@@ -4,6 +4,8 @@ namespace Database\Factories;
 
 use App\Models\Portfolio;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Category;
+
 
 class PortfolioFactory extends Factory {
     protected $model = Portfolio::class;
@@ -19,7 +21,7 @@ class PortfolioFactory extends Factory {
             'category' => $this->faker->word(),
             'date' => $this->faker->date(),
             'address' => $this->faker->address(),
-
+            'category_id' => Category::inRandomOrder()->first()->id ?? Category::factory(), // 🆕 Assign Random Category
             // 🆕 Randomly Generated Page Content
             'page_content' => $this->faker->paragraphs(3, true),
         ];

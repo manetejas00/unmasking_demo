@@ -34,16 +34,11 @@ class PagesController extends Controller
 
     public function projects_details(Request $request)
     {
-        // Ensure an ID is provided
-    if (!$request->has('id')) {
-        abort(404); // Show 404 page if no ID is provided
-    }
-
-    // Fetch project details by ID
-    $portfolio = Portfolio::findOrFail($request->id);
-
-    // Pass the data to the view
-    return view('pages.projects-details', compact('portfolio'));
+        if (!$request->has('id')) {
+            abort(404); // Show 404 page if no ID is provided
+        }
+        $portfolio = Portfolio::findOrFail($request->id);
+        return view('pages.projects-details', compact('portfolio'));
     }
 
     public function projects_details_2()
@@ -80,5 +75,4 @@ class PagesController extends Controller
     {
         return view('pages/notFound');
     }
-
 }

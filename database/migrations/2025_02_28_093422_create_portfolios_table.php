@@ -13,6 +13,7 @@ return new class extends Migration {
             $table->string('detail_image'); // Path to the image
             $table->string('sub_title')->nullable(); // Optional field
             $table->string('designation')->nullable();
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
