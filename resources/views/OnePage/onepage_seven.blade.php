@@ -490,7 +490,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="thumbnail">
-                                                        <img src="{{ Storage::url($testimonial->image) }}" alt="testimonial">
+                                                        <img src="{{ Storage::url($testimonial->image) }}"
+                                                            alt="testimonial">
                                                         <div class="icon icon-quote">
                                                             <i class="fa-duotone fa-quote-left"></i>
                                                         </div>
@@ -618,59 +619,90 @@
                                 labore et dolor magnaaliqua.
                             </p>
                         </div>
+                        {{-- Success & Error Messages --}}
+                        <div id="alert-success" class="alert alert-success d-none"></div>
+                        <div id="alert-error" class="alert alert-danger d-none"></div>
+
                         <div class="contact-form style-two">
-                            <form id="contact-form" action="#">
+                            <form id="contact-form" action="{{ route('contact.store') }}" method="POST">
+                                @csrf
                                 <div class="contact-form-wrapper row">
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <input class="input-field" name="contact-name" placeholder="Name"
-                                                id="contact-name" type="text" required>
+                                            <input class="input-field" name="name" placeholder="Name" type="text"
+                                                required>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <input class="input-field" name="contact-phone" placeholder="Phone"
+                                            <input class="input-field" name="phone" placeholder="Phone"
                                                 type="text">
                                         </div>
                                     </div>
-
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <input class="input-field" name="contact-phone" placeholder="Email"
-                                                type="email" required>
+                                            <input class="input-field" name="email" placeholder="Email" type="email"
+                                                required>
                                         </div>
                                     </div>
-
                                     <div class="col-lg-6">
                                         <div class="form-group">
-                                            <input class="input-field" type="text" id="subject"
-                                                placeholder="Website" name="Website">
+                                            <input class="input-field" type="text" placeholder="Website"
+                                                name="website">
                                         </div>
                                     </div>
-
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <textarea class="input-field" placeholder="How can we help" name="contact-message" id="contact-message"></textarea>
+                                            <textarea class="input-field" placeholder="How can we help" name="message" required></textarea>
                                         </div>
                                     </div>
-
                                     <div class="col-lg-12">
                                         <div class="form-submit-group">
-                                            <button name="submit" class="tmp-btn btn-primary" type="submit"
-                                                id="submit">
-                                                Submit Now
-                                            </button>
+                                            <button name="submit" class="tmp-btn btn-primary" type="submit">Submit
+                                                Now</button>
                                         </div>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
+    {{-- AJAX Script --}}
+    <script>
+        $(document).ready(function() {
+            $("#contact-form").submit(function(event) {
+                event.preventDefault();
+
+                let formData = {
+                    name: $("#name").val(),
+                    phone: $("#phone").val(),
+                    email: $("#email").val(),
+                    website: $("#website").val(),
+                    message: $("#message").val(),
+                    _token: "{{ csrf_token() }}",
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "{{ route('contact.store') }}",
+                    data: formData,
+                    success: function(response) {
+                        $("#alert-success").removeClass("d-none").text(response.message);
+                        $("#alert-error").addClass("d-none");
+                        $("#contact-form")[0].reset();
+                    },
+                    error: function(response) {
+                        $("#alert-error").removeClass("d-none").text(response.responseJSON
+                            .message);
+                        $("#alert-success").addClass("d-none");
+                    }
+                });
+            });
+        });
+    </script>
     <!-- End Contact Area  -->
 
     <!-- Join Us One Start -->

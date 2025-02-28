@@ -5,6 +5,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MultipagesController;
 use App\Http\Controllers\OnePageController;
+use App\Http\Controllers\ContactMessageController;
 
 
 Route::get('/', [OnePageController::class, 'onePage_seven'])->name('index');
@@ -66,3 +67,5 @@ Route::prefix('multipages/')->group(function () {
         Route::get('index-eight', 'index_eight')->name('index-eight');
     });
 });
+
+Route::post('/contact', [ContactMessageController::class, 'store'])->name('contact.store');
