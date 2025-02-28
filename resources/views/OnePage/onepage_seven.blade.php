@@ -262,156 +262,40 @@
     <!-- Tmp Servisec Processs Area Two End -->
 
     <!-- tmp product area start -->
-    <div class="tmp-product-area tmp-section-gapTop bg-product-1 with-construction" id="portfolio">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-head color-white">
-                        <div class="section-sub-title center-title">
-                            <img src="{{ asset('assets/images/services/section-custom-menubar.png ') }}"src="{{ asset('assets/images/services/section-custom-menubar.png ') }}"
-                                alt="Corporate_service">
-                            <span class="subtitle">OUR PORTFOLIO</span>
-                        </div>
-                        <h2 class="title split-collab">Let's Check Our Best Works </h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container-full">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!-- product swiper area start -->
-                    <div class="product-swiper-area-one">
-
-                        <div class="swiper mySwiper-portfolio-2-cons">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <!-- single product area start -->
-                                    <div class="signle-product-start"
-                                        data-tmp-cursor="lg text-secondary transparent fw-bold"
-                                        data-tmp-cursor-icon="fa-solid fa-arrow-up-right">
-                                        <a href="{{ route('projects-details') }}" class="thumbnail">
-                                            <img src="{{ asset('assets/images/portfolio/portfolio-8.png') }}"src="{{ asset('assets/images/portfolio/portfolio-8.png') }}"
-                                                alt="corporate_business">
+    <div class="container-full">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="product-swiper-area-one">
+                    <div class="swiper mySwiper-portfolio-2-cons">
+                        <div class="swiper-wrapper">
+                            @foreach($portfolios as $portfolio)
+                            <div class="swiper-slide">
+                                <div class="signle-product-start"
+                                    data-tmp-cursor="lg text-secondary transparent fw-bold"
+                                    data-tmp-cursor-icon="fa-solid fa-arrow-up-right">
+                                    <a href="#" class="thumbnail">
+                                        <img src="{{ asset($portfolio->image) }}" alt="{{ $portfolio->title }}">
+                                    </a>
+                                    <div class="inner-content">
+                                        <a href="#">
+                                            <h5 class="title">{{ $portfolio->title }}</h5>
                                         </a>
-                                        <div class="inner-content">
-                                            <a href="{{ route('projects-details') }}">
-                                                <h5 class="title">Corporate Design</h5>
-                                            </a>
-                                            <span class="designation">Financial advisory</span>
-                                            <div class="tag"></div>
-                                        </div>
+                                        <span class="designation">{{ $portfolio->designation }}</span>
+                                        <div class="tag"></div>
                                     </div>
-                                    <!-- single product area end -->
-                                </div>
-                                <div class="swiper-slide">
-                                    <!-- single product area start -->
-                                    <div class="signle-product-start"
-                                        data-tmp-cursor="lg text-secondary transparent fw-bold"
-                                        data-tmp-cursor-icon="fa-solid fa-arrow-up-right">
-                                        <a href="{{ route('projects-details') }}" class="thumbnail">
-                                            <img src="{{ asset('assets/images/portfolio/portfolio-9.png') }}"src="{{ asset('assets/images/portfolio/portfolio-9.png') }}"
-                                                alt="corporate_business">
-                                        </a>
-                                        <div class="inner-content">
-                                            <a href="{{ route('projects-details') }}">
-                                                <h5 class="title">Executive Design Kit</h5>
-                                            </a>
-                                            <span class="designation">Financial advisory</span>
-                                            <div class="tag"></div>
-                                        </div>
-                                    </div>
-                                    <!-- single product area end -->
-                                </div>
-                                <div class="swiper-slide">
-                                    <!-- single product area start -->
-                                    <div class="signle-product-start"
-                                        data-tmp-cursor="lg text-secondary transparent fw-bold"
-                                        data-tmp-cursor-icon="fa-solid fa-arrow-up-right">
-                                        <a href="{{ route('projects-details') }}" class="thumbnail">
-                                            <img src="{{ asset('assets/images/portfolio/portfolio-10.png') }}"src="{{ asset('assets/images/portfolio/portfolio-10.png') }}"
-                                                alt="corporate_business">
-                                        </a>
-                                        <div class="inner-content">
-                                            <a href="{{ route('projects-details') }}">
-                                                <h5 class="title">Business Theme Pack</h5>
-                                            </a>
-                                            <span class="designation">Financial advisory</span>
-                                            <div class="tag"></div>
-                                        </div>
-                                    </div>
-                                    <!-- single product area end -->
-                                </div>
-                                <div class="swiper-slide">
-                                    <!-- single product area start -->
-                                    <div class="signle-product-start"
-                                        data-tmp-cursor="lg text-secondary transparent fw-bold"
-                                        data-tmp-cursor-icon="fa-solid fa-arrow-up-right">
-                                        <a href="{{ route('projects-details') }}" class="thumbnail">
-                                            <img src="{{ asset('assets/images/portfolio/portfolio-11.png') }}"src="{{ asset('assets/images/portfolio/portfolio-11.png') }}"
-                                                alt="corporate_business">
-                                        </a>
-                                        <div class="inner-content">
-                                            <a href="{{ route('projects-details') }}">
-                                                <h5 class="title">Executive Layout Set</h5>
-                                            </a>
-                                            <span class="designation">Financial advisory</span>
-                                            <div class="tag"></div>
-                                        </div>
-                                    </div>
-                                    <!-- single product area end -->
-                                </div>
-                                <div class="swiper-slide">
-                                    <!-- single product area start -->
-                                    <div class="signle-product-start"
-                                        data-tmp-cursor="lg text-secondary transparent fw-bold"
-                                        data-tmp-cursor-icon="fa-solid fa-arrow-up-right">
-                                        <a href="{{ route('projects-details') }}" class="thumbnail">
-                                            <img src="{{ asset('assets/images/portfolio/portfolio-12.png') }}"src="{{ asset('assets/images/portfolio/portfolio-12.png') }}"
-                                                alt="corporate_business">
-                                        </a>
-                                        <div class="inner-content">
-                                            <a href="{{ route('projects-details') }}">
-                                                <h5 class="title">Professional Design</h5>
-                                            </a>
-                                            <span class="designation">Financial advisory</span>
-                                            <div class="tag"></div>
-                                        </div>
-                                    </div>
-                                    <!-- single product area end -->
-                                </div>
-                                <div class="swiper-slide">
-                                    <!-- single product area start -->
-                                    <div class="signle-product-start"
-                                        data-tmp-cursor="lg text-secondary transparent fw-bold"
-                                        data-tmp-cursor-icon="fa-solid fa-arrow-up-right">
-                                        <a href="{{ route('projects-details') }}" class="thumbnail">
-                                            <img src="{{ asset('assets/images/portfolio/portfolio-7.png') }}"src="{{ asset('assets/images/portfolio/portfolio-7.png') }}"
-                                                alt="corporate_business">
-                                        </a>
-                                        <div class="inner-content">
-                                            <a href="{{ route('projects-details') }}">
-                                                <h5 class="title">Business Layout Library</h5>
-                                            </a>
-                                            <span class="designation">Financial advisory</span>
-                                            <div class="tag"></div>
-                                        </div>
-                                    </div>
-                                    <!-- single product area end -->
                                 </div>
                             </div>
-                            <div class="swiper-pagination"></div>
-                            <div class="swiper-button-next" data-tmp-cursor="md transparent fw-bold"
-                                data-tmp-cursor-text="Next"></div>
-                            <div class="swiper-button-prev" data-tmp-cursor="md transparent fw-bold"
-                                data-tmp-cursor-text="Prev"></div>
+                            @endforeach
                         </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next" data-tmp-cursor="md transparent fw-bold" data-tmp-cursor-text="Next"></div>
+                        <div class="swiper-button-prev" data-tmp-cursor="md transparent fw-bold" data-tmp-cursor-text="Prev"></div>
                     </div>
-                    <!-- product swiper area end -->
                 </div>
             </div>
         </div>
     </div>
+
     <!-- tmp product area end -->
 
     <!-- Tmp FAQ area Start  -->

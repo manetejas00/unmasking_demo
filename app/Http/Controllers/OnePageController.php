@@ -8,6 +8,7 @@ use App\Models\Service;
 use App\Models\CustomersCount;
 use App\Models\WorkProcess;
 use App\Models\AboutSection;
+use App\Models\Portfolio;
 class OnePageController extends Controller
 {
     public function onePage_one()
@@ -47,8 +48,11 @@ class OnePageController extends Controller
         $customersCounts = CustomersCount::all(); // Fetch all customer count data
         $workProcesses = WorkProcess::orderBy('step_number')->get();
         $about = AboutSection::first();
-        return view('OnePage/onepage_seven', compact('banners', 'services', 'customersCounts','workProcesses','about'));
+        $portfolios = Portfolio::latest()->get(); // Fetch all portfolio items
+
+        return view('OnePage/onepage_seven', compact('banners', 'services', 'customersCounts', 'workProcesses', 'about', 'portfolios'));
     }
+
 
 
 

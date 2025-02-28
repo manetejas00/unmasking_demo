@@ -52,5 +52,9 @@ class DatabaseSeeder extends Seeder
         if (\App\Models\AboutSection::count() === 0) {
             \App\Models\AboutSection::factory(3)->create();
         }
+
+        if (\App\Models\Portfolio::count() === 0) {
+            \App\Models\Portfolio::factory(3)->create();
+        }
     }
 }
