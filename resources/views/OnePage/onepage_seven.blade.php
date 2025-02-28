@@ -274,7 +274,7 @@
                                     data-tmp-cursor="lg text-secondary transparent fw-bold"
                                     data-tmp-cursor-icon="fa-solid fa-arrow-up-right">
                                     <a href="#" class="thumbnail">
-                                        <img src="{{ asset($portfolio->image) }}" alt="{{ $portfolio->title }}">
+                                        <img src="{{ Storage::url($portfolio->image) }}" alt="{{ $portfolio->title }}">
                                     </a>
                                     <div class="inner-content">
                                         <a href="#">
