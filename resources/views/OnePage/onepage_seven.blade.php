@@ -74,36 +74,7 @@
     <!-- tmp banner area end -->
 
     <!-- tmp service area start -->
-    <div class="best-service-we-provide tmp-section-gapTop">
-        <div class="container">
-            <div class="row g-5">
-                @foreach ($services as $key => $service)
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-12" data-sal-delay="{{ 150 + $key * 100 }}"
-                        data-sal="slide-up" data-sal-duration="800">
 
-                        <div class="service-inner financial-service-inner agency-service feature-service">
-                            <div class="icon">
-                                <img src="{{ Storage::url($service->icon_image) }}" alt="{{ $service->title }}" width="60"
-                                    height="60">
-                            </div>
-                            <div class="content">
-                                <h2 class="title">{{ $service->title }}</h2>
-                                <p class="description">
-                                    {{ $service->description }}
-                                </p>
-                                <div class="three--dot">
-                                    <div class="dot dot-one"></div>
-                                    <div class="dot dot-two"></div>
-                                    <div class="dot dot-three"></div>
-                                </div>
-                            </div>
-                            <a href="{{ route('service-details', ['id' => $service->id]) }}" class="over_link"></a>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
     <!-- tmp service area end -->
 
     <!-- Tpm About Area Start  -->
@@ -178,7 +149,7 @@
                 <div class="col-lg-12">
                     <div class="section-head">
                         <div class="section-sub-title center-title">
-                            <img src="{{ asset('assets/images/services/section-custom-menubar.png ') }}"src="{{ asset('assets/images/services/section-custom-menubar.png ') }}"
+                            <img src="{{ asset('assets/images/services/section-custom-menubar.png') }}"
                                 alt="Business_Consulting_services">
                             <span>OUR SERVICES</span>
                         </div>
@@ -187,139 +158,32 @@
                 </div>
             </div>
             <div class="row g-5">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="150" data-sal="slide-up"
-                    data-sal-duration="800">
-                    <div class="service-inner financial-service-inner">
-                        <div class="icon">
-                            <img src="{{ asset('assets/images/services/service-icon-1.png') }}"src="{{ asset('assets/images/services/service-icon-1.png') }}"
-                                alt="corporate Business Services">
-                        </div>
-                        <div class="content">
-                            <h2 class="title">Roofing Installation</h2>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-                            </p>
-                            <div class="three--dot">
-                                <div class="dot dot-one"></div>
-                                <div class="dot dot-two"></div>
-                                <div class="dot dot-two"></div>
+                @foreach ($services as $service)
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="{{ $loop->index * 100 + 150 }}"
+                        data-sal="slide-up" data-sal-duration="800">
+                        <div class="service-inner financial-service-inner">
+                            <div class="icon">
+                                <img src="{{ Storage::url($service->icon_image) }}" alt="{{ $service->title }}">
                             </div>
-                        </div>
-                        <a href="{{ route('service-details') }}" class="over_link"></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="250" data-sal="slide-up"
-                    data-sal-duration="800">
-                    <div class="service-inner financial-service-inner">
-                        <div class="icon">
-                            <img src="{{ asset('assets/images/services/service-icon-2.png') }}"src="{{ asset('assets/images/services/service-icon-2.png') }}"
-                                alt="corporate Business Services">
-
-                        </div>
-                        <div class="content">
-                            <h2 class="title">Interior Designing</h2>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-                            </p>
-                            <div class="three--dot">
-                                <div class="dot dot-one"></div>
-                                <div class="dot dot-two"></div>
-                                <div class="dot dot-two"></div>
+                            <div class="content">
+                                <h2 class="title">{{ $service->title }}</h2>
+                                <p class="description">
+                                    {{ Str::limit($service->description, 100) }}
+                                </p>
+                                <div class="three--dot">
+                                    <div class="dot dot-one"></div>
+                                    <div class="dot dot-two"></div>
+                                    <div class="dot dot-three"></div>
+                                </div>
                             </div>
+                            <a href="{{ route('service-details', ['id' => $service->id]) }}" class="over_link"></a>
                         </div>
-                        <a href="{{ route('service-details') }}" class="over_link"></a>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="350" data-sal="slide-up"
-                    data-sal-duration="800">
-                    <div class="service-inner financial-service-inner">
-                        <div class="icon">
-                            <img src="{{ asset('assets/images/services/service-icon-3.png') }}"src="{{ asset('assets/images/services/service-icon-3.png') }}"
-                                alt="corporate Business Services">
-
-                        </div>
-                        <div class="content">
-                            <h2 class="title">Plumbing Services</h2>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-                            </p>
-                            <div class="three--dot">
-                                <div class="dot dot-one"></div>
-                                <div class="dot dot-two"></div>
-                                <div class="dot dot-two"></div>
-                            </div>
-                        </div>
-                        <a href="{{ route('service-details') }}" class="over_link"></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="450" data-sal="slide-up"
-                    data-sal-duration="800">
-                    <div class="service-inner financial-service-inner">
-                        <div class="icon">
-                            <img src="{{ asset('assets/images/services/service-icon-4.png') }}"src="{{ asset('assets/images/services/service-icon-4.png') }}"
-                                alt="corporate Business Services">
-
-                        </div>
-                        <div class="content">
-                            <h2 class="title">Electrical Wiring</h2>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-                            </p>
-                            <div class="three--dot">
-                                <div class="dot dot-one"></div>
-                                <div class="dot dot-two"></div>
-                                <div class="dot dot-two"></div>
-                            </div>
-                        </div>
-                        <a href="{{ route('service-details') }}" class="over_link"></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="550" data-sal="slide-up"
-                    data-sal-duration="800">
-                    <div class="service-inner financial-service-inner">
-                        <div class="icon">
-                            <img src="{{ asset('assets/images/services/service-icon-5.png') }}"src="{{ asset('assets/images/services/service-icon-5.png') }}"
-                                alt="corporate Business Services">
-                        </div>
-                        <div class="content">
-                            <h2 class="title">Landscaping Design</h2>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-                            </p>
-                            <div class="three--dot">
-                                <div class="dot dot-one"></div>
-                                <div class="dot dot-two"></div>
-                                <div class="dot dot-two"></div>
-                            </div>
-                        </div>
-                        <a href="{{ route('service-details') }}" class="over_link"></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-12" data-sal-delay="650" data-sal="slide-up"
-                    data-sal-duration="800">
-                    <div class="service-inner financial-service-inner">
-                        <div class="icon">
-                            <img src="{{ asset('assets/images/services/service-icon-6.png') }}"src="{{ asset('assets/images/services/service-icon-6.png') }}"
-                                alt="corporate Business Services">
-
-                        </div>
-                        <div class="content">
-                            <h2 class="title">Flooring Installation</h2>
-                            <p class="description">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-                            </p>
-                            <div class="three--dot">
-                                <div class="dot dot-one"></div>
-                                <div class="dot dot-two"></div>
-                                <div class="dot dot-two"></div>
-                            </div>
-                        </div>
-                        <a href="{{ route('service-details') }}" class="over_link"></a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
+
     <!-- End Service Area  -->
 
     <!-- Start Main Counter up-5 Area  -->
