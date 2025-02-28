@@ -297,34 +297,61 @@
     <!-- tmp product area end -->
 
     <!-- Tmp FAQ area Start  -->
-    <div class="faq-accordion">
-        <div class="accordion" id="accordionExample">
-            @foreach($faqs as $key => $faq)
-            <div class="accordion-item">
-                <div class="accordion-header" id="heading{{ $key }}">
-                    <div class="accordion-button {{ $key == 0 ? '' : 'collapsed' }}" data-bs-toggle="collapse" role="button"
-                        data-bs-target="#collapse{{ $key }}" aria-expanded="{{ $key == 0 ? 'true' : 'false' }}"
-                        aria-controls="collapse{{ $key }}">
-                        <div class="accordion-button-left">
-                            <i class="fa-regular fa-question"></i>
-                            <span>{{ $faq->question }}</span>
+    <div class="faq-area faq-style-one faq-bg-image bg_image tmp-section-gap mt-dec--180">
+        <div class="container pt--180">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-head">
+                        <div class="section-sub-title center-title">
+                            <img src="{{ asset('assets/images/services/section-custom-menubar.png ') }}"src="{{ asset('assets/images/services/section-custom-menubar.png ') }}"
+                                alt="Corporate_service">
+                            <span class="subtitle">QUESTION AND ANSWERS</span>
                         </div>
-                        <div class="accordion-button-right">
-                            <i class="fa-sharp fa-light fa-arrow-right"></i>
-                        </div>
-                    </div>
-                </div>
-                <div id="collapse{{ $key }}" class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}"
-                    aria-labelledby="heading{{ $key }}" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        {{ $faq->answer }}
+                        <h2 class="title split-collab">Frequency Asked Questions</h2>
                     </div>
                 </div>
             </div>
-            @endforeach
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 pr--30">
+                    <div class="thumbnail-faq-cons">
+                        <img src="{{ asset('assets/images/faq/faq-3.jpg') }}"src="{{ asset('assets/images/faq/faq-3.jpg') }}"
+                            alt="Business Consulting FAQ">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="faq-accordion">
+                        <div class="accordion" id="accordionExample">
+                            @foreach($faqs as $key => $faq)
+                            <div class="accordion-item">
+                                <div class="accordion-header" id="heading{{ $key }}">
+                                    <div class="accordion-button {{ $key == 0 ? '' : 'collapsed' }}" data-bs-toggle="collapse" role="button"
+                                        data-bs-target="#collapse{{ $key }}" aria-expanded="{{ $key == 0 ? 'true' : 'false' }}"
+                                        aria-controls="collapse{{ $key }}">
+                                        <div class="accordion-button-left">
+                                            <i class="fa-regular fa-question"></i>
+                                            <span>{{ $faq->question }}</span>
+                                        </div>
+                                        <div class="accordion-button-right">
+                                            <i class="fa-sharp fa-light fa-arrow-right"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="collapse{{ $key }}" class="accordion-collapse collapse {{ $key == 0 ? 'show' : '' }}"
+                                    aria-labelledby="heading{{ $key }}" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        {{ $faq->answer }}
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </div>
-
     <!-- Tmp FAQ area Start  -->
 
     <!-- Start team area  -->
