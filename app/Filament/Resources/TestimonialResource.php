@@ -22,7 +22,7 @@ class TestimonialResource extends Resource
             TextInput::make('name')->required(),
             TextInput::make('designation')->required(),
             Textarea::make('testimonial')->required(),
-            FileUpload::make('image')->image(),
+            FileUpload::make('image')->image()->preserveFilenames(),
         ]);
     }
 

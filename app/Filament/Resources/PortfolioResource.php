@@ -18,8 +18,8 @@ class PortfolioResource extends Resource
         return $form->schema([
             Forms\Components\TextInput::make('title')->required(),
             Forms\Components\TextInput::make('sub_title'),
-            Forms\Components\FileUpload::make('image')->image()->directory('portfolio'),
-            Forms\Components\FileUpload::make('detail_image')->image()->directory('portfolio'),
+            Forms\Components\FileUpload::make('image')->image()->directory('portfolio')->preserveFilenames(),
+            Forms\Components\FileUpload::make('detail_image')->image()->directory('portfolio')->preserveFilenames(),
             Forms\Components\TextInput::make('designation'),
 
             // 🆕 Additional Fields

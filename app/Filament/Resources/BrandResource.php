@@ -24,7 +24,7 @@ class BrandResource extends Resource
                     ->required(),
                 FileUpload::make('image')
                     ->directory('brands')
-                    ->image(),
+                    ->image()->preserveFilenames(),
             ]);
     }
 

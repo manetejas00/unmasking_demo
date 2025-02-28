@@ -17,7 +17,7 @@ class TeamResource extends Resource
         return $form->schema([
             Forms\Components\TextInput::make('name')->required(),
             Forms\Components\TextInput::make('designation')->required(),
-            Forms\Components\FileUpload::make('image')->directory('team-images')->image(),
+            Forms\Components\FileUpload::make('image')->directory('team-images')->image()->preserveFilenames(),
             Forms\Components\TextInput::make('facebook')->url(),
             Forms\Components\TextInput::make('linkedin')->url(),
             Forms\Components\TextInput::make('twitter')->url(),
