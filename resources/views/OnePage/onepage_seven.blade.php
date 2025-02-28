@@ -238,7 +238,7 @@
                         <div class="single-services construction">
                             <div class="services-inner">
                                 <div class="thumbnail thumbnail-rounded border-top-left hover-animation">
-                                    <a href="#">
+                                    <a href="{{ route('service-details', ['id' => $process->id]) }}" >
                                         {{-- {{ dd(Storage::url($process->image)) }} --}}
                                         <img src="{{ Storage::url($process->image) }}" alt="{{ $process->title }}" width="350"
                                         height="350">
