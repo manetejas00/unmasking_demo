@@ -57,7 +57,7 @@ class OnePageController extends Controller
         $faqs = Faq::latest()->get();
         $teams = Team::latest()->get();
         $testimonials = Testimonial::latest()->get();
-        $brands = Brand::latest()->limit(5)->get();
+        $brands = Brand::latest()->limit(4)->get();
 
         return view('OnePage/onepage_seven', compact('banners', 'services', 'customersCounts', 'workProcesses', 'about', 'portfolios', 'faqs', 'teams', 'testimonials', 'brands'));
     }

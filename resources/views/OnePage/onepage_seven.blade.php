@@ -490,7 +490,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="thumbnail">
-                                                        <img src="{{ asset($testimonial->image) }}" alt="testimonial">
+                                                        <img src="{{ Storage::url($testimonial->image) }}" alt="testimonial">
                                                         <div class="icon icon-quote">
                                                             <i class="fa-duotone fa-quote-left"></i>
                                                         </div>
