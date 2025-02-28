@@ -14,8 +14,7 @@ class PortfolioFactory extends Factory {
             'sub_title' => $this->faker->sentence(3),
             'image' => 'portfolio-' . rand(7, 12) . '.png', // Mock images
             'designation' => $this->faker->jobTitle(),
-
-            // 🆕 Additional Fields
+            'detail_image' => 'portfolio_detail-' . rand(7, 12) . '.png', // Mock images
             'client' => $this->faker->name(),
             'category' => $this->faker->word(),
             'date' => $this->faker->date(),
